@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\beacon\beacon.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\hello\hello.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\interrupt\interrupt.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\join\join.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\periodic\periodic.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\ping\ping.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\transmit\transmit.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+
