@@ -1,0 +1,495 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.50.5.4819/W32 for ARM               18/Feb/2015  17:22:39 #
+# Copyright 2007-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  C:\Users\Administrador\Documents\GitHub\lmic\examples    #
+#                    EFM32\hello\Debug\Exe\hello.out                          #
+#    Map file     =  C:\Users\Administrador\Documents\GitHub\lmic\examples    #
+#                    EFM32\hello\Debug\List\hello.map                         #
+#    Command line =  "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\aes.o"                             #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_acmp.o"                         #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_adc.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_aes.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_assert.o"                       #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_burtc.o"                        #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_cmu.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_dac.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_dbg.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_dma.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_ebi.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_emu.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_gpio.o"                         #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_i2c.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_idac.o"                         #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_int.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_lcd.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_lesense.o"                      #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_letimer.o"                      #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_leuart.o"                       #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_mpu.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_msc.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_opamp.o"                        #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_pcnt.o"                         #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_prs.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_rmu.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_rtc.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_system.o"                       #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_timer.o"                        #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_usart.o"                        #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_vcmp.o"                         #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\em_wdog.o"                         #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\hal-efm32.o"                       #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\lmic.o"                            #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\main.o"                            #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\oslmic.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\radio.o"                           #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\rtcdrv.o"                          #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\startup_efm32tg.o"                 #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Obj\system_efm32tg.o" -o               #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\Exe\hello.out" --map                   #
+#                    "C:\Users\Administrador\Documents\GitHub\lmic\examples   #
+#                    EFM32\hello\Debug\List\hello.map" --config "C:\Program   #
+#                    Files (x86)\IAR Systems\Embedded Workbench 6.0           #
+#                    Kickstart\arm\config\linker\EnergyMicro\EFM32TG840F32.ic #
+#                    f" --semihosting --entry __iar_program_start --redirect  #
+#                    __iar_sh_stdout=__iar_sh_stdout_swo --vfe                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x00007fff] { ro };
+"P2":  place in [from 0x20000000 to 0x20000fff] { rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                       0x9c
+  .intvec            ro code  0x00000000    0x9c  startup_efm32tg.o [1]
+                            - 0x0000009c    0x9c
+
+"P1":                                     0x1c10
+  .text              ro code  0x0000009c   0x8f4  em_cmu.o [1]
+  .text              ro code  0x00000990   0x11c  system_efm32tg.o [1]
+  .text              ro code  0x00000aac   0x164  em_emu.o [1]
+  .text              ro code  0x00000c10   0x394  hal-efm32.o [1]
+  .text              ro code  0x00000fa4    0xe4  em_gpio.o [1]
+  .text              ro code  0x00001088    0x56  ABImemcpy.o [4]
+  .text              ro code  0x000010de    0x2e  copy_init3.o [4]
+  .text              ro code  0x0000110c   0x148  em_usart.o [1]
+  .text              ro code  0x00001254    0x84  em_rtc.o [1]
+  .text              ro code  0x000012d8   0x148  rtcdrv.o [1]
+  .text              ro code  0x00001420    0x16  oslmic.o [1]
+  .text              ro code  0x00001436    0x22  zero_init3.o [4]
+  .text              ro code  0x00001458    0x66  ABImemset.o [4]
+  .text              ro code  0x000014c0   0x2d4  radio.o [1]
+  .text              ro code  0x00001794     0x6  radio.o [1]
+  .text              ro code  0x0000179a     0x8  radio.o [1]
+  .text              ro code  0x000017a2     0x8  radio.o [1]
+  .text              ro code  0x000017aa     0x8  radio.o [1]
+  .text              ro code  0x000017b2     0x8  radio.o [1]
+  .text              ro code  0x000017bc    0xee  I64DivMod.o [4]
+  .text              ro code  0x000018ac   0x138  oslmic.o [1]
+  .text              ro code  0x000019e4     0x2  I64DivZer.o [4]
+  .text              ro code  0x000019e8    0x10  lmic.o [1]
+  .text              ro code  0x000019f8    0xb8  em_dma.o [1]
+  .text              ro code  0x00001ab0    0x5c  main.o [1]
+  .rodata            const    0x00001b0c    0x30  hal-efm32.o [1]
+  .text              ro code  0x00001b3c    0x28  data_init.o [4]
+  .iar.init_table    const    0x00001b64    0x24  - Linker created -
+  .rodata            const    0x00001b88    0x18  hal-efm32.o [1]
+  .text              ro code  0x00001ba0    0x16  cmain.o [4]
+  .text              ro code  0x00001bb6     0x4  low_level_init.o [3]
+  .text              ro code  0x00001bba     0x4  exit.o [3]
+  .text              ro code  0x00001bc0     0xa  cexit.o [4]
+  .text              ro code  0x00001bcc    0x14  exit.o [5]
+  .rodata            const    0x00001be0    0x14  hal-efm32.o [1]
+  .rodata            const    0x00001bf4    0x10  main.o [1]
+  .text              ro code  0x00001c04    0x10  startup_efm32tg.o [1]
+  .text              ro code  0x00001c14     0xc  cstartup_M.o [4]
+  .rodata            const    0x00001c20     0x8  main.o [1]
+  .rodata            const    0x00001c28     0x4  radio.o [1]
+  .text              ro code  0x00001c2c     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c30     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c34     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c38     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c3c     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c40     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c44     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c48     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c4c     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c50     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c54     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c58     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c5c     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c60     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c64     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c68     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c6c     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c70     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c74     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c78     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c7c     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c80     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c84     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c88     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c8c     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c90     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c94     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c98     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001c9c     0x4  startup_efm32tg.o [1]
+  .text              ro code  0x00001ca0     0x4  startup_efm32tg.o [1]
+  .rodata            const    0x00001ca4     0x0  zero_init3.o [4]
+  .rodata            const    0x00001ca4     0x0  copy_init3.o [4]
+  Initializer bytes  ro data  0x00001ca4     0x8  <for P2 s0>
+                            - 0x00001cac  0x1c10
+
+"P2", part 1 of 3:                           0x8
+  P2 s0                       0x20000000     0x8  <Init block>
+    .data            inited   0x20000000     0x4  system_efm32tg.o [1]
+    .data            inited   0x20000004     0x4  system_efm32tg.o [1]
+                            - 0x20000008     0x8
+
+"P2", part 2 of 3:                         0x1a8
+  .bss               zero     0x20000008   0x174  lmic.o [1]
+  .bss               zero     0x2000017c    0x10  radio.o [1]
+  .bss               zero     0x2000018c     0x8  hal-efm32.o [1]
+  .bss               zero     0x20000194     0x8  oslmic.o [1]
+  .bss               zero     0x2000019c     0x4  main.o [1]
+  .bss               zero     0x200001a0     0x4  rtcdrv.o [1]
+  .bss               zero     0x200001a4     0x4  rtcdrv.o [1]
+  .bss               zero     0x200001a8     0x4  system_efm32tg.o [1]
+  .bss               zero     0x200001ac     0x2  em_emu.o [1]
+  .bss               zero     0x200001ae     0x1  rtcdrv.o [1]
+                            - 0x200001af   0x1a7
+
+"P2", part 3 of 3:                         0x400
+  CSTACK                      0x200001b0   0x400  <Block>
+    CSTACK           uninit   0x200001b0   0x400  <Block tail>
+                            - 0x200005b0   0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1a7:
+          0x20000008  0x1a7
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8:
+          0x00001ca4    0x8
+    1 destination range, total size 0x8:
+          0x20000000    0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module             ro code  ro data  rw data
+    ------             -------  -------  -------
+C:\Users\Administrador\Documents\GitHub\lmic\examples EFM32\hello\Debug\Obj: [1]
+    em_cmu.o             2 292
+    em_dma.o               184
+    em_emu.o               356                 2
+    em_gpio.o              228
+    em_rtc.o               132
+    em_usart.o             328
+    hal-efm32.o            916       92        8
+    lmic.o                  16               372
+    main.o                  92       24        4
+    oslmic.o               334                 8
+    radio.o                762        4       16
+    rtcdrv.o               328                 9
+    startup_efm32tg.o      292
+    system_efm32tg.o       284        8       12
+    --------------------------------------------
+    Total:               6 544      128      431
+
+command line: [2]
+    --------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                   4
+    low_level_init.o         4
+    --------------------------------------------
+    Total:                   8
+
+rt7M_tl.a: [4]
+    ABImemcpy.o             86
+    ABImemset.o            102
+    I64DivMod.o            238
+    I64DivZer.o              2
+    cexit.o                 10
+    cmain.o                 22
+    copy_init3.o            46
+    cstartup_M.o            12
+    data_init.o             40
+    zero_init3.o            34
+    --------------------------------------------
+    Total:                 592
+
+shb_l.a: [5]
+    exit.o                  20
+    --------------------------------------------
+    Total:                  20
+
+    Gaps                    12
+    Linker created                   36    1 024
+------------------------------------------------
+    Grand Total:         7 176      164    1 455
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address   Size  Type      Object
+-----                     -------   ----  ----      ------
+?main                  0x00001ba1         Code  Gb  cmain.o [4]
+ACMP0_IRQHandler       0x00001c61         Code  Wk  startup_efm32tg.o [1]
+ADC0_IRQHandler        0x00001c65         Code  Wk  startup_efm32tg.o [1]
+AES_IRQHandler         0x00001ca1         Code  Wk  startup_efm32tg.o [1]
+BITBAND_Peripheral     0x0000009d    0xe  Code  Lc  em_cmu.o [1]
+BITBAND_Peripheral     0x00001255    0xe  Code  Lc  em_rtc.o [1]
+BusFault_Handler       0x00001c39         Code  Wk  startup_efm32tg.o [1]
+CHIP_Init              0x00000c19    0x2  Code  Lc  hal-efm32.o [1]
+CMU_AUXClkGet          0x00000151   0x64  Code  Lc  em_cmu.o [1]
+CMU_ClockDivSet        0x00000271  0x1bc  Code  Gb  em_cmu.o [1]
+CMU_ClockEnable        0x0000042d   0x86  Code  Gb  em_cmu.o [1]
+CMU_ClockFreqGet       0x000004b3  0x14c  Code  Gb  em_cmu.o [1]
+CMU_ClockSelectGet     0x000005ff   0xf2  Code  Gb  em_cmu.o [1]
+CMU_ClockSelectSet     0x000006f1  0x176  Code  Gb  em_cmu.o [1]
+CMU_DBGClkGet          0x000001b5   0x30  Code  Lc  em_cmu.o [1]
+CMU_DivToLog2          0x000000db   0x20  Code  Lc  em_cmu.o [1]
+CMU_FlashWaitStateControl
+                       0x000000fb   0x56  Code  Lc  em_cmu.o [1]
+CMU_FlashWaitStateMax  0x000000ab   0x30  Code  Lc  em_cmu.o [1]
+CMU_IRQHandler         0x00001c91         Code  Wk  startup_efm32tg.o [1]
+CMU_LFClkGet           0x000001e5   0x76  Code  Lc  em_cmu.o [1]
+CMU_Lock               0x00000ab5    0x8  Code  Lc  em_emu.o [1]
+CMU_OscillatorEnable   0x00000885   0x9c  Code  Gb  em_cmu.o [1]
+CMU_Sync               0x0000025b   0x16  Code  Lc  em_cmu.o [1]
+CMU_Unlock             0x00000abd    0xa  Code  Lc  em_emu.o [1]
+CSTACK$$Base           0x200001b0          --   Gb  - Linker created -
+CSTACK$$Limit          0x200005b0          --   Gb  - Linker created -
+DAC0_IRQHandler        0x00001c69         Code  Wk  startup_efm32tg.o [1]
+DMA_IRQHandler         0x000019f9   0xa4  Code  Gb  em_dma.o [1]
+DebugMon_Handler       0x00001c45         Code  Wk  startup_efm32tg.o [1]
+EMU_EnterEM2           0x00000b79   0x5e  Code  Gb  em_emu.o [1]
+EMU_Restore            0x00000ac7   0x80  Code  Lc  em_emu.o [1]
+EMU_UpdateOscConfig    0x00000bd7    0xa  Code  Gb  em_emu.o [1]
+GPIO_EVEN_IRQHandler   0x00001c51         Code  Wk  startup_efm32tg.o [1]
+GPIO_ODD_IRQHandler    0x00001c71         Code  Wk  startup_efm32tg.o [1]
+GPIO_PinModeSet        0x00000fa5   0xde  Code  Gb  em_gpio.o [1]
+GPIO_PinOutClear       0x00000c1b   0x26  Code  Lc  hal-efm32.o [1]
+GPIO_PinOutSet         0x00000c41   0x24  Code  Lc  hal-efm32.o [1]
+GetProdRev             0x00000991    0xa  Code  Lc  system_efm32tg.o [1]
+HAL                    0x2000018c    0x8  Data  Lc  hal-efm32.o [1]
+HardFault_Handler      0x00001c31         Code  Wk  startup_efm32tg.o [1]
+I2C0_IRQHandler        0x00001c6d         Code  Wk  startup_efm32tg.o [1]
+LCD_IRQHandler         0x00001c99         Code  Wk  startup_efm32tg.o [1]
+LESENSE_IRQHandler     0x00001c81         Code  Wk  startup_efm32tg.o [1]
+LETIMER0_IRQHandler    0x00001c89         Code  Wk  startup_efm32tg.o [1]
+LEUART0_IRQHandler     0x00001c85         Code  Wk  startup_efm32tg.o [1]
+LMIC                   0x20000008  0x174  Data  Gb  lmic.o [1]
+LMIC_init              0x000019e9    0xa  Code  Gb  lmic.o [1]
+MSC_IRQHandler         0x00001c9d         Code  Wk  startup_efm32tg.o [1]
+MemManage_Handler      0x00001c35         Code  Wk  startup_efm32tg.o [1]
+NMI_Handler            0x00001c2d         Code  Wk  startup_efm32tg.o [1]
+NVIC_ClearPendingIRQ   0x000012f1   0x18  Code  Lc  rtcdrv.o [1]
+NVIC_EnableIRQ         0x000012d9   0x18  Code  Lc  rtcdrv.o [1]
+OS                     0x20000194    0x8  Data  Lc  oslmic.o [1]
+PCNT0_IRQHandler       0x00001c8d         Code  Wk  startup_efm32tg.o [1]
+PendSV_Handler         0x00001c49         Code  Wk  startup_efm32tg.o [1]
+RTCDRV_CallBack        0x00000dd3   0x1a  Code  Gb  hal-efm32.o [1]
+RTCDRV_Setup           0x00001327   0x64  Code  Gb  rtcdrv.o [1]
+RTCDRV_Trigger         0x000013af   0x48  Code  Gb  rtcdrv.o [1]
+RTC_CompareSet         0x00001263   0x2e  Code  Gb  em_rtc.o [1]
+RTC_Enable             0x00001291   0x12  Code  Gb  em_rtc.o [1]
+RTC_IRQHandler         0x0000138b   0x24  Code  Gb  rtcdrv.o [1]
+RTC_Init               0x000012a3   0x2a  Code  Gb  em_rtc.o [1]
+RTC_IntClear           0x00001309    0x6  Code  Lc  rtcdrv.o [1]
+RTC_IntDisable         0x0000130f    0xc  Code  Lc  rtcdrv.o [1]
+RTC_IntEnable          0x00000c65    0xc  Code  Lc  hal-efm32.o [1]
+RTC_IntEnable          0x0000131b    0xc  Code  Lc  rtcdrv.o [1]
+Region$$Table$$Base    0x00001b64          --   Gb  - Linker created -
+Region$$Table$$Limit   0x00001b88          --   Gb  - Linker created -
+Reset_Handler          0x00001c05         Code  Wk  startup_efm32tg.o [1]
+SVC_Handler            0x00001c41         Code  Wk  startup_efm32tg.o [1]
+SysTick_Handler        0x00001c4d         Code  Wk  startup_efm32tg.o [1]
+SystemCoreClock        0x200001a8    0x4  Data  Gb  system_efm32tg.o [1]
+SystemCoreClockGet     0x0000099b   0x1a  Code  Gb  system_efm32tg.o [1]
+SystemCoreClockUpdate  0x00000aad    0x8  Code  Lc  em_emu.o [1]
+SystemCoreClockUpdate  0x00000c11    0x8  Code  Lc  hal-efm32.o [1]
+SystemHFClockGet       0x000009b5   0xa6  Code  Gb  system_efm32tg.o [1]
+SystemHFXOClock        0x20000000    0x4  Data  Lc  system_efm32tg.o [1]
+SystemInit             0x00000a5b    0x2  Code  Gb  system_efm32tg.o [1]
+SystemLFRCOClockGet    0x00000a5d    0x6  Code  Gb  system_efm32tg.o [1]
+SystemLFXOClock        0x20000004    0x4  Data  Lc  system_efm32tg.o [1]
+SystemLFXOClockGet     0x00000a69    0x6  Code  Gb  system_efm32tg.o [1]
+SystemULFRCOClockGet   0x00000a63    0x6  Code  Gb  system_efm32tg.o [1]
+TIMER0_IRQHandler      0x00001c55         Code  Wk  startup_efm32tg.o [1]
+TIMER1_IRQHandler      0x00001c75         Code  Wk  startup_efm32tg.o [1]
+USART0_RX_IRQHandler   0x00001c59         Code  Wk  startup_efm32tg.o [1]
+USART0_TX_IRQHandler   0x00001c5d         Code  Wk  startup_efm32tg.o [1]
+USART1_RX_IRQHandler   0x00001c79         Code  Wk  startup_efm32tg.o [1]
+USART1_TX_IRQHandler   0x00001c7d         Code  Wk  startup_efm32tg.o [1]
+USART_BaudrateSyncSet  0x0000110d   0x42  Code  Gb  em_usart.o [1]
+USART_InitSync         0x0000114f   0x82  Code  Gb  em_usart.o [1]
+USART_Reset            0x000011d1   0x54  Code  Gb  em_usart.o [1]
+USART_Rx               0x0000123d    0xc  Code  Gb  em_usart.o [1]
+USART_Tx               0x00001249    0xc  Code  Gb  em_usart.o [1]
+UsageFault_Handler     0x00001c3d         Code  Wk  startup_efm32tg.o [1]
+VCMP_IRQHandler        0x00001c95         Code  Wk  startup_efm32tg.o [1]
+__Vectors              0x00000000          --   Gb  startup_efm32tg.o [1]
+__Vectors_End          0x0000009c         Data  Gb  startup_efm32tg.o [1]
+__Vectors_Size {Abs}   0x0000009c          --   Gb  startup_efm32tg.o [1]
+__aeabi_ldiv0          0x000019e5         Code  Gb  I64DivZer.o [4]
+__aeabi_memcpy4        0x00001089         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8        0x00001089         Code  Gb  ABImemcpy.o [4]
+__aeabi_memset         0x00001459         Code  Gb  ABImemset.o [4]
+__aeabi_uldivmod       0x000017bd         Code  Gb  I64DivMod.o [4]
+__cmain                0x00001ba1         Code  Gb  cmain.o [4]
+__exit                 0x00001bcd   0x14  Code  Gb  exit.o [5]
+__iar_Memset           0x00001459         Code  Gb  ABImemset.o [4]
+__iar_Memset_word      0x00001461         Code  Gb  ABImemset.o [4]
+__iar_copy_init3       0x000010df   0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3       0x00001b3d   0x28  Code  Gb  data_init.o [4]
+__iar_program_start    0x00001c15         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3       0x00001437   0x22  Code  Gb  zero_init3.o [4]
+__low_level_init       0x00001bb7    0x4  Code  Gb  low_level_init.o [3]
+__vector_table         0x00000000         Data  Gb  startup_efm32tg.o [1]
+__vector_table_0x1c    0x0000001c         Data  Gb  startup_efm32tg.o [1]
+_call_main             0x00001bad         Code  Gb  cmain.o [4]
+_exit                  0x00001bc1         Code  Gb  cexit.o [4]
+_main                  0x00001bb3         Code  Gb  cmain.o [4]
+cmuStatus              0x200001ac    0x2  Data  Lc  em_emu.o [1]
+cnt                    0x2000019c    0x4  Data  Lc  main.o [1]
+configChannel          0x000015e7   0x44  Code  Lc  radio.o [1]
+configLoraModem        0x00001539   0xae  Code  Lc  radio.o [1]
+debug_char             0x00000ef5    0x2  Code  Gb  hal-efm32.o [1]
+debug_hex              0x00000ef7   0x20  Code  Gb  hal-efm32.o [1]
+debug_init             0x00000ec7   0x1c  Code  Gb  hal-efm32.o [1]
+debug_led              0x00000ee3   0x12  Code  Gb  hal-efm32.o [1]
+debug_str              0x00000f33   0x16  Code  Gb  hal-efm32.o [1]
+debug_uint             0x00000f17   0x1c  Code  Gb  hal-efm32.o [1]
+debug_val              0x00000f49   0x20  Code  Gb  hal-efm32.o [1]
+deltaticks             0x00000e1f   0x26  Code  Lc  hal-efm32.o [1]
+exit                   0x00001bbb    0x4  Code  Gb  exit.o [3]
+getBw                  0x0000179b    0x8  Code  Gb  radio.o [1]
+getCr                  0x000017a3    0x8  Code  Gb  radio.o [1]
+getErrataFixEmuE107En  0x00000b47   0x32  Code  Lc  em_emu.o [1]
+getIh                  0x000017b3    0x8  Code  Gb  radio.o [1]
+getNocrc               0x000017ab    0x8  Code  Gb  radio.o [1]
+getSf                  0x00001795    0x6  Code  Gb  radio.o [1]
+hal_checkTimer         0x00000e55   0x16  Code  Gb  hal-efm32.o [1]
+hal_disableIRQs        0x00000e6b    0xe  Code  Gb  hal-efm32.o [1]
+hal_enableIRQs         0x00000e79   0x12  Code  Gb  hal-efm32.o [1]
+hal_failed             0x00000ebb    0xc  Code  Gb  hal-efm32.o [1]
+hal_init               0x00000e95   0x26  Code  Gb  hal-efm32.o [1]
+hal_io_init            0x00000c97   0x78  Code  Lc  hal-efm32.o [1]
+hal_pin_nss            0x00000d25   0x12  Code  Gb  hal-efm32.o [1]
+hal_pin_rst            0x00000d37    0x2  Code  Gb  hal-efm32.o [1]
+hal_pin_rxtx           0x00000d0f   0x16  Code  Gb  hal-efm32.o [1]
+hal_sleep              0x00000e8b    0xa  Code  Gb  hal-efm32.o [1]
+hal_spi                0x00000dbd   0x16  Code  Gb  hal-efm32.o [1]
+hal_spi_init           0x00000d39   0x84  Code  Lc  hal-efm32.o [1]
+hal_ticks              0x00000e05   0x1a  Code  Gb  hal-efm32.o [1]
+hal_time_init          0x00000ded   0x18  Code  Lc  hal-efm32.o [1]
+hal_waitUntil          0x00000e45   0x10  Code  Gb  hal-efm32.o [1]
+initfunc               0x00001ab1   0x38  Code  Lc  main.o [1]
+main                   0x00001ae9   0x14  Code  Gb  main.o [1]
+memset                 0x00001421   0x16  Code  Gb  oslmic.o [1]
+opmode                 0x0000150d   0x1c  Code  Lc  radio.o [1]
+opmodeLora             0x00001529   0x10  Code  Lc  radio.o [1]
+os_clearCallback       0x000018ed   0x2e  Code  Gb  oslmic.o [1]
+os_getTime             0x000018c7    0x8  Code  Gb  oslmic.o [1]
+os_init                0x000018ad   0x1a  Code  Gb  oslmic.o [1]
+os_runloop             0x00001985   0x56  Code  Gb  oslmic.o [1]
+os_setCallback         0x0000191b   0x2c  Code  Gb  oslmic.o [1]
+os_setTimedCallback    0x00001947   0x3e  Code  Gb  oslmic.o [1]
+radio_init             0x000016df   0xa6  Code  Gb  radio.o [1]
+randbuf                0x2000017c   0x10  Data  Lc  radio.o [1]
+readReg                0x000014e7   0x26  Code  Lc  radio.o [1]
+rtcCb                  0x200001a0    0x4  Data  Lc  rtcdrv.o [1]
+rtcFreq                0x200001a4    0x4  Data  Lc  rtcdrv.o [1]
+rtcInitialized         0x200001ae    0x1  Data  Lc  rtcdrv.o [1]
+rxlora                 0x0000162b   0xb4  Code  Lc  radio.o [1]
+rxlorairqmask          0x00001c28    0x4  Data  Lc  radio.o [1]
+setpin                 0x00000c71   0x26  Code  Lc  hal-efm32.o [1]
+unlinkjob              0x000018cf   0x1e  Code  Lc  oslmic.o [1]
+writeReg               0x000014c1   0x26  Code  Lc  radio.o [1]
+
+
+[1] = C:\Users\Administrador\Documents\GitHub\lmic\examples EFM32\hello\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  7 176 bytes of readonly  code memory
+    164 bytes of readonly  data memory
+  1 455 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
