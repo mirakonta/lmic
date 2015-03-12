@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 IBM Corporation.
+ * Copyright (c) 2014-2015 IBM Corporation.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,10 +10,11 @@
  *******************************************************************************/
 
 #include "lmic.h"
+#include "debug.h"
 
 // sensor functions
-extern void initsensor();
-extern u2_t readsensor();
+extern void initsensor(void);
+extern u2_t readsensor(void);
 
 
 //////////////////////////////////////////////////
@@ -67,16 +68,19 @@ static void initfunc (osjob_t* j) {
 
 
 // application entry point
-void main () {
+int main () {
     osjob_t initjob;
 
     // initialize runtime env
     os_init();
+    // initialize debug library
+    debug_init();
     // setup initial job
     os_setCallback(&initjob, initfunc);
     // execute scheduled jobs and events
     os_runloop();
     // (not reached)
+    return 0;
 }
 
 
@@ -90,7 +94,7 @@ static osjob_t reportjob;
 static void reportfunc (osjob_t* j) {
     // read sensor
     u2_t val = readsensor();
-    DEBUG_VAL("val = ", val);
+    debug_val("val = ", val);
     // prepare and schedule data for transmission
     LMIC.frame[0] = val << 8;
     LMIC.frame[1] = val;
@@ -105,14 +109,14 @@ static void reportfunc (osjob_t* j) {
 //////////////////////////////////////////////////
 
 void onEvent (ev_t ev) {
-    DEBUG_EVENT(ev);
+    debug_event(ev);
 
     switch(ev) {
 
       // network joined, session established
       case EV_JOINED:
           // switch on LED
-          DEBUG_LED(1);
+          debug_led(1);
           // kick-off periodic sensor job
           reportfunc(&reportjob);
           break;

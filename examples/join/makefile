@@ -1,2 +1,2 @@
-include ../examples.gmk
+include ../projects.gmk
 

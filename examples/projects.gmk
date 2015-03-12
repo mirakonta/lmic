@@ -1,0 +1,85 @@
+# SELECT TOOLCHAIN GNU/IAR/KEIL
+TOOLCHAIN = keil
+
+# EDIT CONFIGURATIONS BELOW TO REFLECT COMPILER INSTALL DIR AND CMSIS INCLUDE DIR 
+
+# IAR TOOLCHAIN
+ifeq (${TOOLCHAIN}, iar)
+IAR = C:/PROGRA~2/IARSYS~1/EMBEDD~1.5_2/arm
+INC = ${IAR}/CMSIS/Include
+CC  = ${IAR}/bin/iccarm
+AS  = ${IAR}/bin/iasmarm
+LN  = ${IAR}/bin/ilinkarm
+HEX = ${IAR}/bin/ielftool --ihex
+
+CCOPTS  = --cpu=Cortex-M3 --endian=little --diag_suppress Pa050,Pa089,Pe066
+ASOPTS  = --cpu Cortex-M3
+LNOPTS  = --semihosting --config ${IAR}/config/linker/ST/STM32L152xB.icf
+endif
+
+# KEIL TOOLCHAIN
+ifeq (${TOOLCHAIN}, keil)
+KEIL = C:/Keil_v5
+INC = ${KEIL}/ARM/Pack/ARM/CMSIS/4.1.0/CMSIS/Include
+CC  = ${KEIL}/ARM/ARMCC/bin/armcc.exe
+AS  = ${KEIL}/ARM/ARMCC/bin/armasm.exe
+LN  = ${KEIL}/ARM/ARMCC/bin/armlink.exe
+HEX = ${KEIL}/ARM/ARMCC/bin/fromelf.exe --i32
+
+CCOPTS  = --cpu=Cortex-M3 -c --c99 -D__MICROLIB --apcs=interwork --split_sections
+ASOPTS  = --cpu Cortex-M3 --pd "__MICROLIB SETA 1"
+LNOPTS  = --library_type=microlib --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes
+HEXOPTS = --output
+endif
+
+# GNU TOOLCHAIN
+ifeq (${TOOLCHAIN}, gnu)
+GNU = C:/Software/gcc-arm-none-eabi
+INC = ../../../lmic/CMSIS/Include
+CC  = ${GNU}/bin/arm-none-eabi-gcc
+AS  = ${GNU}/bin/arm-none-eabi-as
+LN  = ${GNU}/bin/arm-none-eabi-ld
+HEX = ${GNU}/bin/arm-none-eabi-objcopy -O ihex
+
+CCOPTS  = -mcpu=cortex-m3 -mthumb -c -std=gnu99
+CCOPTS  += -fno-common -fmessage-length=0 -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP
+ASOPTS  = -mcpu=cortex-m3 -mthumb
+LNOPTS  = --gc-sections -L../../../lmic/ldscripts -Tstm32l15xx6.ld
+endif
+
+# LMIC CONFIG
+LMICCFG = -DSTM32L1XX_MD -DCFG_DEBUG -DCFG_eu868 -DCFG_wimod_board -DCFG_sx1272_radio -DCFG_lmic_clib
+
+LMICDIR  = ../../lmic
+HALDIR   = ../../stm32
+BUILDDIR = build
+
+# RULES
+SRCS = $(notdir $(wildcard ${LMICDIR}/*.c ${HALDIR}/*.c ${HALDIR}/*_${TOOLCHAIN}.s *.c))
+OBJS = $(patsubst %, ${BUILDDIR}/%.o, $(basename ${SRCS}))
+
+VPATH = ${LMICDIR} ${HALDIR} .
+
+${BUILDDIR}/%.o: %.c ${BUILDDIR}
+	${CC} ${CCOPTS} ${LMICCFG} -I${INC} -I${LMICDIR} -I${HALDIR} $< -o$@
+
+${BUILDDIR}/%.o: %.s ${BUILDDIR}
+	${AS} ${ASOPTS} -I${INC} $< -o $@ 
+
+${BUILDDIR}/%.out: ${OBJS}
+	${LN} ${LNOPTS} -o $@ $^
+
+${BUILDDIR}/%.hex: ${BUILDDIR}/%.out
+	${HEX} $< ${HEXOPTS} $@
+
+all: ${BUILDDIR}/$(notdir ${CURDIR}).hex
+
+clean:
+	rm -rf ${BUILDDIR} Debug RTE settings *.dep *.bak *.sfr *.map *.uvguix.*
+
+${BUILDDIR}:
+	mkdir $@
+
+.PHONY: all clean
+
+.SECONDARY:

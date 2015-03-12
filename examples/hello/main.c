@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 IBM Corporation.
+ * Copyright (c) 2014-2015 IBM Corporation.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,20 @@
  *******************************************************************************/
 
 #include "lmic.h"
+#include "debug.h"
+
+// LMIC application callbacks not used in his example
+void os_getArtEui (u1_t* buf) {
+}
+
+void os_getDevEui (u1_t* buf) {
+}
+
+void os_getDevKey (u1_t* buf) {
+}
+
+void onEvent (ev_t ev) {
+}
 
 // counter
 static int cnt = 0;
@@ -17,24 +31,27 @@ static int cnt = 0;
 // log text to USART and toggle LED
 static void initfunc (osjob_t* job) {
     // say hello
-    DEBUG_STR("Hello World!\r\n");
+    debug_str("Hello World!\r\n");
     // log counter
-    DEBUG_VAL("cnt = ", cnt);
+    debug_val("cnt = ", cnt);
     // toggle LED
-    DEBUG_LED(++cnt & 1);
+    debug_led(++cnt & 1);
     // reschedule job every second
     os_setTimedCallback(job, os_getTime()+sec2osticks(1), initfunc);
 }
 
 // application entry point
-void main () {
+int main () {
     osjob_t initjob;
 
     // initialize runtime env
     os_init();
+    // initialize debug library
+    debug_init();
     // setup initial job
     os_setCallback(&initjob, initfunc);
     // execute scheduled jobs and events
     os_runloop();
     // (not reached)
+    return 0;
 }
