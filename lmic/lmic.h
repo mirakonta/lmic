@@ -20,8 +20,8 @@
 
 // LMIC version
 #define LMIC_VERSION_MAJOR 1
-#define LMIC_VERSION_MINOR 2
-#define LMIC_VERSION_BUILD 1424968920
+#define LMIC_VERSION_MINOR 4
+#define LMIC_VERSION_BUILD 1426605786
 
 enum { MAX_FRAME_LEN      =  64 };   //!< Library cap on max frame length
 enum { TXCONF_ATTEMPTS    =   8 };   //!< Transmit attempts for confirmed frames
@@ -123,6 +123,7 @@ enum { OP_NONE     = 0x0000,
 enum { TXRX_ACK    = 0x80,   // confirmed UP frame was acked
        TXRX_NACK   = 0x40,   // confirmed UP frame was not acked
        TXRX_NOPORT = 0x20,   // set if a frame with a port was RXed, clr if no frame/no port
+       TXRX_PORT   = 0x10,   // set if a frame with a port was RXed, LMIC.frame[LMIC.dataBeg-1] => port
        TXRX_DNW1   = 0x01,   // received in 1st DN slot
        TXRX_DNW2   = 0x02,   // received in 2dn DN slot
        TXRX_PING   = 0x04 }; // received in a scheduled RX slot

@@ -87,7 +87,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>6.50.5.4846</state>
+          <state>6.50.1.4445</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -99,7 +99,7 @@
         </option>
         <option>
           <name>OGChipSelectEditMenu</name>
-          <state>EFM32TG840F32	EnergyMicro EFM32TG840F32</state>
+          <state>STM32L152xB	ST STM32L152xB</state>
         </option>
         <option>
           <name>GenLowLevelInterface</name>
@@ -164,10 +164,9 @@
         <debug>1</debug>
         <option>
           <name>CCDefines</name>
-          <state>EFM32TG840F32</state>
-          <state>TG_STK</state>
+          <state>STM32L1XX_MD</state>
+          <state>CFG_lmic_clib</state>
           <state>CFG_eu868</state>
-          <state>CFG_DEBUG</state>
           <state>CFG_wimod_board</state>
           <state>CFG_sx1272_radio</state>
         </option>
@@ -298,10 +297,8 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>$PROJ_DIR$\..\..\lmic-src</state>
-          <state>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG</state>
-          <state>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc</state>
-          <state>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src</state>
+          <state>$PROJ_DIR$\..\..\lmic</state>
+          <state>$PROJ_DIR$\..\..\stm32</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1843,372 +1840,60 @@
     </settings>
   </configuration>
   <group>
-    <name>LMIC</name>
-    <group>
-      <name>HAL</name>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg840f32.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_acmp.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_adc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_aes.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_af_pins.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_af_ports.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_calibrate.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_cmu.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dac.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_devinfo.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dma.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dma_ch.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dma_descriptor.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dmactrl.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dmareq.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_emu.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_gpio.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_gpio_p.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_i2c.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lcd.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense_buf.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense_ch.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense_st.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_letimer.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_leuart.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_msc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_pcnt.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_prs.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_prs_ch.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_prs_signals.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_rmu.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_romtable.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_rtc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_timer.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_timer_cc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_usart.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_vcmp.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_wdog.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_acmp.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_acmp.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_adc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_adc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_aes.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_aes.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_assert.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_assert.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_bitband.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_burtc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_burtc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_chip.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_cmu.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_cmu.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_common.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dac.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dac.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dbg.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dbg.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\em_device.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dma.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dma.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_ebi.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_ebi.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_emu.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_emu.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_gpio.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_gpio.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_i2c.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_i2c.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_idac.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_idac.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_int.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_int.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_lcd.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_lcd.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_lesense.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_lesense.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_letimer.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_letimer.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_leuart.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_leuart.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_mpu.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_mpu.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_msc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_msc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_opamp.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_opamp.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_part.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_pcnt.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_pcnt.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_prs.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_prs.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_rmu.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_rmu.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_rtc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_rtc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_system.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_system.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_timer.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_timer.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_usart.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_usart.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_vcmp.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_vcmp.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_version.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_wdog.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_wdog.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\hal-efm32.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\rtcdrv.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\rtcdrv.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\startup_efm32tg.s</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\system_efm32tg.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\system_efm32tg.h</name>
-      </file>
-    </group>
+    <name>lmic</name>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\aes.c</name>
+      <name>$PROJ_DIR$\..\..\lmic\aes.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\hal.h</name>
+      <name>$PROJ_DIR$\..\..\lmic\hal.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\lmic.c</name>
+      <name>$PROJ_DIR$\..\..\lmic\lmic.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\lmic.h</name>
+      <name>$PROJ_DIR$\..\..\lmic\lmic.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\lorabase.h</name>
+      <name>$PROJ_DIR$\..\..\lmic\lorabase.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\oslmic.c</name>
+      <name>$PROJ_DIR$\..\..\lmic\oslmic.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\oslmic.h</name>
+      <name>$PROJ_DIR$\..\..\lmic\oslmic.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\radio.c</name>
+      <name>$PROJ_DIR$\..\..\lmic\radio.c</name>
+    </file>
+  </group>
+  <group>
+    <name>stm32</name>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\debug.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\debug.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\hal.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\hw.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\hw.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\startup_stm32l1xx_md_iar.s</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\stm32l1xx.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\system_stm32l1xx.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\stm32\system_stm32l1xx.h</name>
     </file>
   </group>
   <file>

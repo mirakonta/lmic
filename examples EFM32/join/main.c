@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 IBM Corporation.
+ * Copyright (c) 2014-2015 IBM Corporation.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,7 @@
  *******************************************************************************/
 
 #include "lmic.h"
+#include "debug.h"
 
 //////////////////////////////////////////////////
 // CONFIGURATION (FOR APPLICATION CALLBACKS BELOW)
@@ -60,16 +61,19 @@ static void initfunc (osjob_t* j) {
 
 
 // application entry point
-void main () {
+int main () {
     osjob_t initjob;
 
     // initialize runtime env
     os_init();
+    // initialize debug library
+    debug_init();
     // setup initial job
     os_setCallback(&initjob, initfunc);
     // execute scheduled jobs and events
     os_runloop();
     // (not reached)
+    return 0;
 }
 
 
@@ -83,7 +87,7 @@ static u1_t ledstate = 0;
 static void blinkfunc (osjob_t* j) {
     // toggle LED
     ledstate = !ledstate;
-    DEBUG_LED(ledstate);
+    debug_led(ledstate);
     // reschedule blink job
     os_setTimedCallback(j, os_getTime()+ms2osticks(100), blinkfunc);
 }
@@ -94,7 +98,7 @@ static void blinkfunc (osjob_t* j) {
 //////////////////////////////////////////////////
 
 void onEvent (ev_t ev) {
-    DEBUG_EVENT(ev);
+    debug_event(ev);
 
     switch(ev) {
 
@@ -109,7 +113,7 @@ void onEvent (ev_t ev) {
           // cancel blink job
           os_clearCallback(&blinkjob);
           // switch on LED
-          DEBUG_LED(1);
+          debug_led(1);
           // (don't schedule any new actions)
           break;
     }

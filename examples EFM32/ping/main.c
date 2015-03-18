@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 IBM Corporation.
+ * Copyright (c) 2014-2015 IBM Corporation.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,7 @@
  *******************************************************************************/
 
 #include "lmic.h"
+#include "debug.h"
 
 //////////////////////////////////////////////////
 // CONFIGURATION (FOR APPLICATION CALLBACKS BELOW)
@@ -60,16 +61,19 @@ static void initfunc (osjob_t* j) {
 
 
 // application entry point
-void main () {
+int main () {
     osjob_t initjob;
 
     // initialize runtime env
     os_init();
+    // initialize debug library
+    debug_init();
     // setup initial job
     os_setCallback(&initjob, initfunc);
     // execute scheduled jobs and events
     os_runloop();
     // (not reached)
+    return 0;
 }
 
 
@@ -78,7 +82,7 @@ void main () {
 //////////////////////////////////////////////////
 
 void onEvent (ev_t ev) {
-    DEBUG_EVENT(ev);
+    debug_event(ev);
 
     switch(ev) {
    
@@ -87,7 +91,7 @@ void onEvent (ev_t ev) {
           // enable pinging mode, start scanning...
           // (set local ping interval configuration to 2^1 == 2 sec)
           LMIC_setPingable(1);
-          DEBUG_STR("SCANNING...\r\n");
+          debug_str("SCANNING...\r\n");
           break;
 
       // beacon found by scanning
@@ -99,10 +103,10 @@ void onEvent (ev_t ev) {
       // data frame received in ping slot
       case EV_RXCOMPLETE:
           // log frame data
-          DEBUG_BUF(LMIC.frame+LMIC.dataBeg, LMIC.dataLen);
+          debug_buf(LMIC.frame+LMIC.dataBeg, LMIC.dataLen);
           if(LMIC.dataLen == 1) {
               // set LED state if exactly one byte is received
-              DEBUG_LED(LMIC.frame[LMIC.dataBeg] & 0x01);
+              debug_led(LMIC.frame[LMIC.dataBeg] & 0x01);
           }
           break;    
     }

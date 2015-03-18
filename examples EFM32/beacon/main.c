@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 IBM Corporation.
+ * Copyright (c) 2014-2015 IBM Corporation.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,7 @@
  *******************************************************************************/
 
 #include "lmic.h"
+#include "debug.h"
 
 //////////////////////////////////////////////////
 // CONFIGURATION (FOR APPLICATION CALLBACKS BELOW)
@@ -60,16 +61,19 @@ static void initfunc (osjob_t* j) {
 
 
 // application entry point
-void main () {
+int main () {
     osjob_t initjob;
 
     // initialize runtime env
     os_init();
+    // initialize debug library
+    debug_init();
     // setup initial job
     os_setCallback(&initjob, initfunc);
     // execute scheduled jobs and events
     os_runloop();
     // (not reached)
+    return 0;
 }
 
 
@@ -78,7 +82,7 @@ void main () {
 //////////////////////////////////////////////////
 
 void onEvent (ev_t ev) {
-    DEBUG_EVENT(ev);
+    debug_event(ev);
 
     switch(ev) {
    
@@ -86,26 +90,26 @@ void onEvent (ev_t ev) {
       case EV_JOINED:
           // enable tracking mode, start scanning...
           LMIC_enableTracking(0);
-          DEBUG_STR("SCANNING...\r\n");
+          debug_str("SCANNING...\r\n");
           break;
 
       // beacon found by scanning
       case EV_BEACON_FOUND:
           // switch LEN on
-          DEBUG_LED(1);
+          debug_led(1);
           break;
 
       // beacon tracked at expected time
       case EV_BEACON_TRACKED:
-          DEBUG_VAL("GPS time = ", LMIC.bcninfo.time);
+          debug_val("GPS time = ", LMIC.bcninfo.time);
           // switch LEN on
-          DEBUG_LED(1);
+          debug_led(1);
           break;
 
       // beacon missed at expected time
       case EV_BEACON_MISSED:
           // switch LEN off
-          DEBUG_LED(0);
+          debug_led(0);
           break;
     }
 }

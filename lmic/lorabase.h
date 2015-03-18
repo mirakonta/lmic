@@ -88,7 +88,19 @@ enum { DR_DNW2           = DR_SF12 };
 enum { CHNL_BCN          = 5 };
 enum { FREQ_BCN          = EU868_F6 };
 enum { DR_BCN            = DR_SF9 };
-enum { AIRTIME_BCN       = 185344 };  // micros
+enum { AIRTIME_BCN       = 144384 };  // micros
+
+enum {
+    // Beacon frame format EU SF9
+    OFF_BCN_NETID    = 0,         
+    OFF_BCN_TIME     = 3,
+    OFF_BCN_CRC1     = 7,
+    OFF_BCN_INFO     = 8,
+    OFF_BCN_LAT      = 9,
+    OFF_BCN_LON      = 12,
+    OFF_BCN_CRC2     = 15,
+    LEN_BCN          = 17
+};
 
 #elif defined(CFG_us915)  // =========================================
 
@@ -109,32 +121,31 @@ enum { US915_125kHz_UPFBASE = 902300000,
 enum { US915_FREQ_MIN = 902000000,
        US915_FREQ_MAX = 928000000 };
 
-enum { CHNL_PING         = 2 };
+enum { CHNL_PING         = 0 }; // used only for default init of state (follows beacon - rotating)
 enum { FREQ_PING         = US915_500kHz_DNFBASE + CHNL_PING*US915_500kHz_DNFSTEP };  // default ping freq
 enum { DR_PING           = DR_SF10CR };       // default ping DR
-enum { CHNL_DNW2         = 1 };
+enum { CHNL_DNW2         = 0 };
 enum { FREQ_DNW2         = US915_500kHz_DNFBASE + CHNL_DNW2*US915_500kHz_DNFSTEP };
-enum { DR_DNW2           = DR_SF10CR };
-enum { CHNL_BCN          = 0 };
-enum { FREQ_BCN          = US915_500kHz_DNFBASE + CHNL_BCN*US915_500kHz_DNFSTEP };
+enum { DR_DNW2           = DR_SF12CR };
+enum { CHNL_BCN          = 0 }; // used only for default init of state (rotating beacon scheme)
 enum { DR_BCN            = DR_SF10CR };
-enum { AIRTIME_BCN       = 82432 };  // micros
+enum { AIRTIME_BCN       = 72192 };  // micros
+
+enum {
+    // Beacon frame format US SF10
+    OFF_BCN_NETID    = 0,         
+    OFF_BCN_TIME     = 3,
+    OFF_BCN_CRC1     = 7,
+    OFF_BCN_INFO     = 9,
+    OFF_BCN_LAT      = 10,
+    OFF_BCN_LON      = 13,
+    OFF_BCN_RFU1     = 16,
+    OFF_BCN_CRC2     = 17,
+    LEN_BCN          = 19
+};
 
 #endif // ===================================================
 
-enum {
-    // Beacon frame format
-    OFF_BCN_RFU      = 0,
-    OFF_BCN_NETID    = 4,         
-    OFF_BCN_CMAP     = 7,
-    OFF_BCN_TIME     = 9,
-    OFF_BCN_CRC1     = 13,
-    OFF_BCN_INFO     = 15,
-    OFF_BCN_LAT      = 16,
-    OFF_BCN_LON      = 19,
-    OFF_BCN_CRC2     = 22,
-    LEN_BCN          = 24
-};
 enum {
     // Join Request frame format
     OFF_JR_HDR      = 0,
@@ -151,7 +162,9 @@ enum {
     OFF_JA_NETID    = 4,
     OFF_JA_DEVADDR  = 7,
     OFF_JA_RFU      = 11,
-    OFF_CFLIST      = 14,
+    OFF_JA_DLSET    = 11,
+    OFF_JA_RXDLY    = 12,
+    OFF_CFLIST      = 13,
     LEN_JA          = 17,
     LEN_JAEXT       = 17+16
 };
@@ -194,6 +207,7 @@ enum {
     FCT_OPTLEN = 0x0F,
 };
 enum {
+    // In UP direction: signals class B enabled
     FCT_CLASSB = FCT_MORE
 };
 enum {
@@ -227,9 +241,12 @@ enum {
     MCMD_SNCH_REQ = 0x07, // set new channel    : u1:chidx, u3:freq, u1:DRrange
     // Class B
     MCMD_PING_SET = 0x11, // set ping freq      : u3: freq
-    MCMD_BCNI_ANS = 0x12, // next beacon start  : u2: delay(10ms), u1:channel
+    MCMD_BCNI_ANS = 0x12, // next beacon start  : u2: delay(in TUNIT millis), u1:channel
 };
 
+enum {
+    MCMD_BCNI_TUNIT = 30  // time unit of delay value in millis
+};
 enum {
     MCMD_LADR_ANS_RFU    = 0xF8, // RFU bits
     MCMD_LADR_ANS_POWACK = 0x04, // 0=not supported power level

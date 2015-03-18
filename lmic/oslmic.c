@@ -72,7 +72,7 @@ void os_setTimedCallback (osjob_t* job, ostime_t time, osjobcb_t cb) {
     job->next = NULL;
     // insert into schedule
     for(pnext=&OS.scheduledjobs; *pnext; pnext=&((*pnext)->next)) {
-        if(time < (*pnext)->deadline) {
+        if((*pnext)->deadline - time > 0) { // (cmp diff, not abs!)
             // enqueue before next element and stop
             job->next = *pnext;
             break;

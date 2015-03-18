@@ -350,7 +350,7 @@ static void configLoraModem () {
         writeReg(LORARegModemConfig2, mc2);
         
         mc3 = SX1276_MC3_AGCAUTO;
-        if (sf == SF11 || sf == SF12) {
+        if ((sf == SF11 || sf == SF12) && getBw(LMIC.rps) == BW125) {
             mc3 |= SX1276_MC3_LOW_DATA_RATE_OPTIMIZE;
         }
         writeReg(LORARegModemConfig3, mc3);
@@ -364,7 +364,7 @@ static void configLoraModem () {
         case CR_4_8: mc1 |= SX1272_MC1_CR_4_8; break;
         }
         
-        if (sf == SF11 || sf == SF12) {
+        if ((sf == SF11 || sf == SF12) && getBw(LMIC.rps) == BW125) {
             mc1 |= SX1272_MC1_LOW_DATA_RATE_OPTIMIZE;
         }
         
