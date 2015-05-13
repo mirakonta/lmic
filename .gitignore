@@ -43,10 +43,33 @@ Temporary Items
 .apdisk
 
 
-!/*/build/iar/
-/*/build/iar/*
-!/*/build/iar/config files
-!/*/build/iar/*.ewp
-!/*/build/iar/*.ewd
-!/*/build/iar/*.eww
 
+
+
+# Compiled binaries
+*.bin
+*.elf
+*.hex
+*.map
+
+# Trash
+*.bak
+
+# IAR project "Debug" directory
+Debug/
+
+# IAR project "Release" directory
+Release/
+
+# IAR project settings directory
+settings/
+
+# IAR backup files
+Backup*
+
+# IAR .dep files
+*.dep
+
+Exe/
+List/
+Obj/
