@@ -35,20 +35,43 @@ endif
 # GNU TOOLCHAIN
 ifeq (${TOOLCHAIN}, gnu)
 GNU = C:/Software/gcc-arm-none-eabi
-INC = ../../../lmic/CMSIS/Include
 CC  = ${GNU}/bin/arm-none-eabi-gcc
 AS  = ${GNU}/bin/arm-none-eabi-as
-LN  = ${GNU}/bin/arm-none-eabi-ld
+LN  = ${GNU}/bin/arm-none-eabi-gcc
 HEX = ${GNU}/bin/arm-none-eabi-objcopy -O ihex
 
-CCOPTS  = -mcpu=cortex-m3 -mthumb -c -std=gnu99
-CCOPTS  += -fno-common -fmessage-length=0 -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP
-ASOPTS  = -mcpu=cortex-m3 -mthumb
-LNOPTS  = --gc-sections -L../../../lmic/ldscripts -Tstm32l15xx6.ld
+CMSIS_INC = ../../stm32/CMSIS/Include
+define CMSIS_MSG
+ERROR: CMSIS Library missing: $(CMSIS_INC)
+## CMSIS: Cortex Microcontroller Software Interface Standard
+## CMSIS Library can be obtained from the STM32L1xx standard peripherals library
+## Download URL: www.st.com/web/catalog/tools/FM147/CL1794/SC961/SS1743/PF257913
+endef
+ifeq (,$(wildcard $(CMSIS_INC)))
+$(error $(CMSIS_MSG))
+endif
+
+LINKER_SCRIPT =  ../../stm32/STM32L152VB_FLASH.ld
+define LNK_SCRIPT_MSG
+ERROR: Linker Script missing: $(LINKER_SCRIPT)
+## Linker Script can be obtained from the STM32L1xx standard peripherals library
+## Download URL: www.st.com/web/catalog/tools/FM147/CL1794/SC961/SS1743/PF257913
+endef
+ifeq (,$(wildcard $(LINKER_SCRIPT)))
+$(error $(LNK_SCRIPT_MSG))
+endif
+
+INC = $(CMSIS_INC)
+
+CPU    = -mcpu=cortex-m3 -mthumb
+CCOPTS = $(CPU) -c -std=gnu99
+CCOPTS += -fno-common -fmessage-length=0 -fno-builtin -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP
+ASOPTS = $(CPU)
+LNOPTS = $(CPU) -Wl,--gc-sections -T$(LINKER_SCRIPT)
 endif
 
 # LMIC CONFIG
-LMICCFG = -DSTM32L1XX_MD -DCFG_DEBUG -DCFG_eu868 -DCFG_wimod_board -DCFG_sx1272_radio -DCFG_lmic_clib
+LMICCFG += -DSTM32L1XX_MD -DCFG_DEBUG -DCFG_eu868 -DCFG_wimod_board -DCFG_sx1272_radio -DCFG_lmic_clib
 
 LMICDIR  = ../../lmic
 HALDIR   = ../../stm32
@@ -60,10 +83,10 @@ OBJS = $(patsubst %, ${BUILDDIR}/%.o, $(basename ${SRCS}))
 
 VPATH = ${LMICDIR} ${HALDIR} .
 
-${BUILDDIR}/%.o: %.c ${BUILDDIR}
+${BUILDDIR}/%.o: %.c | ${BUILDDIR}
 	${CC} ${CCOPTS} ${LMICCFG} -I${INC} -I${LMICDIR} -I${HALDIR} $< -o$@
 
-${BUILDDIR}/%.o: %.s ${BUILDDIR}
+${BUILDDIR}/%.o: %.s | ${BUILDDIR}
 	${AS} ${ASOPTS} -I${INC} $< -o $@ 
 
 ${BUILDDIR}/%.out: ${OBJS}
