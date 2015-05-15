@@ -6,16 +6,46 @@
   <configuration>
     <name>Debug</name>
     <outputs>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_bitband.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_assert.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_aes.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_adc.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dbg.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dma.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_ebi.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_i2c.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_idac.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_int.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_lcd.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_lesense.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_letimer.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_leuart.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_mpu.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_msc.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_opamp.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_pcnt.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_prs.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_timer.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_vcmp.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_wdog.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_acmp.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dbg.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dac.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_cmu.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_burtc.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_assert.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_aes.c</file>
+      <file>$PROJ_DIR$\main.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_adc.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dma.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_ebi.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_emu.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_gpio.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_i2c.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_idac.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_int.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_lcd.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_int.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_i2c.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_lesense.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_emu.c</file>
       <file>$PROJ_DIR$\Debug\Obj\em_adc.o</file>
       <file>$PROJ_DIR$\Debug\Obj\em_assert.o</file>
       <file>$PROJ_DIR$\Debug\Obj\em_burtc.o</file>
@@ -80,11 +110,10 @@
       <file>$PROJ_DIR$\Debug\Obj\em_wdog.pbi</file>
       <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
       <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\lmic.c</file>
       <file>$TOOLKIT_DIR$\config\linker\EnergyMicro\EFM32TG840F32.icf</file>
-      <file>$PROJ_DIR$\main.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\lorabase.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\system_stm32l1xx.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\lmic.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\hal.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\aes.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\lmic.h</file>
@@ -137,8 +166,8 @@
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\stm32l1xx.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\hal-stm32.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_mpu.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\system_stm32l1xx.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_letimer.c</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\system_stm32l1xx.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_msc.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_leuart.c</file>
       <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
@@ -169,9 +198,9 @@
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_vcmp.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_wdog.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_emu.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense_buf.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dmactrl.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_af_pins.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense_buf.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_gpio.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_adc.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_acmp.h</file>
@@ -180,25 +209,25 @@
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dma_descriptor.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dma.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_i2c.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_devinfo.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lcd.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_gpio_p.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_devinfo.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_cmu.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dma_ch.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_gpio_p.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_calibrate.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dma_ch.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_af_ports.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense_ch.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dmareq.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_lesense_st.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_dmareq.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_msc.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_pcnt.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_letimer.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_leuart.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_pcnt.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_prs.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_prs_signals.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_prs_ch.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_rmu.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_prs_ch.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_romtable.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_rtc.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\efm32tg_timer.h</file>
@@ -212,267 +241,178 @@
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\rtcdrv.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\rtcdrv.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_acmp.h</file>
+      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dac.h</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\startup_efm32tg.s</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\system_efm32tg.c</file>
       <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\system_efm32tg.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dac.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_bitband.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_assert.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_aes.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_adc.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dbg.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_dma.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_ebi.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_i2c.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_idac.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_int.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_lcd.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_lesense.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_letimer.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_leuart.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_mpu.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_msc.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_opamp.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_pcnt.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_prs.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_timer.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_vcmp.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\inc\em_wdog.h</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_acmp.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dbg.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dac.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_cmu.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_burtc.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_assert.c</file>
-      <file>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_aes.c</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_adc.c</name>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 149 126</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_acmp.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 234 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 234 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dbg.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4 174 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 1 165 0 166</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 4 174 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 1 165 0 166</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dac.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 77</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 47</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 235 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 1 174 165 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 235 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 1 174 165 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_cmu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 165 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 1 168</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 165 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 1 168</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_burtc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 75</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
           <file> 42</file>
         </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 10</file>
-        </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 213 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
+          <file> 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 213 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
+          <file> 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dma.c</name>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_assert.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 49</file>
+          <file> 74</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 18</file>
+          <file> 41</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 215 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 72 121 73 145 136 210 211</file>
+          <file> 1</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 215 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 72 121 73 145 136 210 211</file>
+          <file> 1</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_ebi.c</name>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_aes.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 50</file>
+          <file> 73</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 19</file>
+          <file> 43</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 216 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
+          <file> 2 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 216 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_emu.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 51</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 20</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 139 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 136 143 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 139 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 136 143 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_gpio.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 52</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 21</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 137 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 137 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_i2c.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 53</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 22</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 217 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 217 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_idac.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 54</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 23</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 218 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 218 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_int.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 55</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 24</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 94 99 96 85 102 126 119 90 219 201 200 95 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 94 99 96 85 102 126 119 90 219 201 200 95 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_lcd.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 56</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 25</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 220 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211 210</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 220 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211 210</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_lesense.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 57</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 26</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 221 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211 210 136</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 221 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211 210 136</file>
+          <file> 2 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1</file>
         </tool>
       </inputs>
     </file>
@@ -481,541 +421,30 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 88</file>
+          <file> 117</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 98</file>
+          <file> 127</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\lmic.c</name>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_adc.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 124</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 89</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\aes.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 123</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 91</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 83 103 99 96 85 102 126 119 90 121 114 79</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 83 103 99 96 85 102 126 119 90 121 114 79</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\oslmic.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 92</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 100</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\radio.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 125</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 118</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\transmit.out</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 120</file>
-        </tool>
-        <tool>
-          <name>OBJCOPY</name>
-          <file> 107</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 74 91 14 10 13 11 12 15 17 16 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 148 89 98 100 118 149 140 141 110 113 101 116</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\main.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 88</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 98</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\app.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 112</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 106</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\startup_stm32l1xx_md.s</name>
-      <outputs>
-        <tool>
-          <name>AARM</name>
-          <file> 105</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\hal-stm32.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 104</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 115</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76 128 95 94 87 86 108 111 77</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76 128 95 94 87 86 108 111 77</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_mpu.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 60</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 29</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 224 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 224 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\system_stm32l1xx.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 109</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 93</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 128 95 94 99 96 85 102 126 119 90 87 86 108 111 77</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 128 95 94 99 96 85 102 126 119 90 87 86 108 111 77</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_letimer.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 58</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 27</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 222 145 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 136 210 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 222 145 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 136 210 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_msc.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 61</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 30</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 225 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 143 136 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 225 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 143 136 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_leuart.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 59</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 28</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 223 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 223 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_opamp.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 62</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 31</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 143 145 211 226 209</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 143 145 211 226 209</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_pcnt.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 63</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 32</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 227 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 227 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_prs.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 64</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 33</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 228 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 211 210</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 228 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 211 210</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_rmu.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 65</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 34</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 150 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 139 210</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 150 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 139 210</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_rtc.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 66</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 35</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 151 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211 210</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 151 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211 210</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_system.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 67</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 36</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 143 145 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 143 145 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_timer.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 68</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 37</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 229 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 229 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_usart.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 69</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 38</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 138 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 138 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 136 210 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_vcmp.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 70</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 39</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 230 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 230 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_wdog.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 71</file>
+          <file> 72</file>
         </tool>
         <tool>
           <name>ICCARM</name>
@@ -1025,11 +454,752 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 231 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210</file>
+          <file> 3 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 231 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210</file>
+          <file> 3 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dma.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 102 150 103 174 165 0 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 5 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 102 150 103 174 165 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_ebi.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 6 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_idac.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 8 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_lcd.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 10 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_int.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123 128 125 114 131 155 148 119 9 230 229 124 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 123 128 125 114 131 155 148 119 9 230 229 124 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_i2c.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_lesense.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1 0 165</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1 0 165</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 166 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 166 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_emu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 81</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 168 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 165 172 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 168 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 165 172 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\lmic.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 153</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 118</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\aes.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 152</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 120</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 112 132 128 125 114 131 155 148 119 150 143 108</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 112 132 128 125 114 131 155 148 119 150 143 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\oslmic.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 129</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\radio.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 154</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 147</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\transmit.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 149</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 136</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 105 120 44 40 43 41 42 45 47 46 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 177 118 127 129 147 178 169 170 139 142 130 145</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 117</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 127</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\app.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 141</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 135</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\startup_stm32l1xx_md.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 134</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\hal-stm32.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 133</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106 157 124 123 116 115 137 140 107</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106 157 124 123 116 115 137 140 107</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_mpu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 90</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_letimer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12 174 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 165 0 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 12 174 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 165 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-STM32\system_stm32l1xx.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 138</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 122</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157 124 123 128 125 114 131 155 148 119 116 115 137 140 107</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 157 124 123 128 125 114 131 155 148 119 116 115 137 140 107</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_msc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 172 165 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0 172 165 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_leuart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 13 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_opamp.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 92</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 172 174 1 16 235</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 172 174 1 16 235</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_pcnt.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_prs.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 1 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 18 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 1 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_rmu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 179 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 168 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 179 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 168 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_rtc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 180 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 180 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_system.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172 174 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 172 174 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_timer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 98</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_usart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 167 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 167 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 165 0 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_vcmp.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 100</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_wdog.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 101</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21 230 229 124 123 128 125 114 131 155 148 119 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 174 0</file>
         </tool>
       </inputs>
     </file>
@@ -1038,21 +1208,21 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 146</file>
+          <file> 175</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 148</file>
+          <file> 177</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76 201 200 95 94 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 147 143 145 136 210 137 211 138 139 150 151 204</file>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106 230 229 124 123 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 176 172 174 165 0 166 1 167 168 179 180 233</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 81 83 103 99 96 85 102 126 119 90 121 114 79 76 201 200 95 94 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 147 143 145 136 210 137 211 138 139 150 151 204</file>
+          <file> 110 112 132 128 125 114 131 155 148 119 150 143 108 106 230 229 124 123 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 176 172 174 165 0 166 1 167 168 179 180 233</file>
         </tool>
       </inputs>
     </file>
@@ -1061,21 +1231,21 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 142</file>
+          <file> 171</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 149</file>
+          <file> 178</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 135 99 96 85 102 126 119 90 121 201 200 95 94 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 136 145 210 139 151 204</file>
+          <file> 164 128 125 114 131 155 148 119 150 230 229 124 123 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 165 174 0 168 180 233</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 135 99 96 85 102 126 119 90 121 201 200 95 94 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 136 145 210 139 151 204</file>
+          <file> 164 128 125 114 131 155 148 119 150 230 229 124 123 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194 165 174 0 168 180 233</file>
         </tool>
       </inputs>
     </file>
@@ -1084,7 +1254,7 @@
       <outputs>
         <tool>
           <name>AARM</name>
-          <file> 140</file>
+          <file> 169</file>
         </tool>
       </outputs>
     </file>
@@ -1093,193 +1263,23 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 144</file>
+          <file> 173</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 141</file>
+          <file> 170</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 94 99 96 85 102 126 119 90 201 200 95 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
+          <file> 123 128 125 114 131 155 148 119 230 229 124 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 94 99 96 85 102 126 119 90 201 200 95 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
+          <file> 123 128 125 114 131 155 148 119 230 229 124 116 115 137 140 238 199 208 201 214 191 220 205 212 192 211 210 223 197 226 225 224 206 195 227 221 218 217 216 215 196 198 202 203 228 200 204 222 207 219 213 193 209 194</file>
         </tool>
       </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_acmp.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 41</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 14</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 205 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 205 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dbg.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 48</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 16</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 214 145 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 211 136 210 137</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 214 145 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 211 136 210 137</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_dac.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 47</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 17</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 209 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 211 145 136 210</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 209 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 211 145 136 210</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_cmu.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 46</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 15</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 136 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 211 139</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 136 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 210 211 139</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_burtc.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 45</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 12</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_assert.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 11</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\lmic-src\HAL-EFM32TG\emlib\src\em_aes.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 43</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 13</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 212 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 212 201 200 95 94 99 96 85 102 126 119 90 87 86 108 111 208 170 178 172 185 162 192 177 184 165 182 180 194 168 197 196 195 176 166 198 191 189 187 186 188 167 169 173 175 199 171 174 193 179 190 183 163 181 164 145 211</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 120 97</file>
-        </tool>
-      </outputs>
     </file>
     <forcedrebuild>
       <name>[REBUILD_ALL]</name>
