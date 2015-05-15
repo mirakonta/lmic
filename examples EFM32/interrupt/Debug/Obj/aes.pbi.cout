@@ -1,35 +1,27 @@
-"C:\Users\Administrador\Documents\GitHub\lmic\lmic-src\aes.c"
+"C:\Users\Administrador\Documents\GitHub\lmic\lmic\aes.c"
 -std=c99
 -ferror-limit=100
 -I
-C:\Users\Administrador\Documents\GitHub\lmic\examples EFM32\interrupt\..\..\lmic-src
+C:\Users\Administrador\Documents\GitHub\lmic\examples EFM32\interrupt\..\..\lmic
 -I
-C:\Users\Administrador\Documents\GitHub\lmic\examples EFM32\interrupt\..\..\lmic-src\HAL-EFM32TG
+C:\Users\Administrador\Documents\GitHub\lmic\examples EFM32\interrupt\..\..\stm32
 -I
-C:\Users\Administrador\Documents\GitHub\lmic\examples EFM32\interrupt\..\..\lmic-src\HAL-EFM32TG\emlib\inc
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\CMSIS\Include
 -I
-C:\Users\Administrador\Documents\GitHub\lmic\examples EFM32\interrupt\..\..\lmic-src\HAL-EFM32TG\emlib\src
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc
 -I
-C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\CMSIS\Include
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc\c
 -I
-C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\inc
+C:\Users\Administrador\Documents\GitHub\lmic\lmic
 -I
-C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\inc\c
+C:\Users\Administrador\Documents\GitHub\lmic\stm32
 -I
-C:\Users\Administrador\Documents\GitHub\lmic\lmic-src
--I
-C:\Users\Administrador\Documents\GitHub\lmic\lmic-src\HAL-EFM32TG
--I
-C:\Users\Administrador\Documents\GitHub\lmic\lmic-src\HAL-EFM32TG\emlib\inc
--I
-C:\Users\Administrador\Documents\GitHub\lmic\lmic-src\HAL-EFM32TG\emlib\src
--I
-C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\CMSIS\Include
--DSTM32L1XX_MD=0
--DCFG_eu868=0
--DCFG_DEBUG=0
--DCFG_wimod_board=0
--DCFG_sx1272_radio=0
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\CMSIS\Include
+-DSTM32L1XX_MD=1
+-DCFG_lmic_clib=1
+-DCFG_eu868=1
+-DCFG_wimod_board=1
+-DCFG_sx1272_radio=1
 -DCFG_EXTI_IRQ_HANDLER=sensorirq
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
@@ -169,18 +161,19 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\CMSIS\In
 -D__JMP_BUF_ELEMENT_TYPE__=unsigned long long int
 -D__JMP_BUF_NUM_ELEMENTS__=8
 -D__TID__=0xcf60
--D__VER__=6050005
--D__BUILD_NUMBER__=4819
+-D__VER__=7040002
+-D__BUILD_NUMBER__=8542
 -D__IAR_SYSTEMS_ICC__=8
--D__VA_STACK_DECREASING__=1
--D__VA_STACK_ALIGN__=4
--D__VA_STACK_ALIGN_EXTRA_BEFORE__=0
 -D__LITTLE_ENDIAN__=1
 -D__BOOL_TYPE__=unsigned char
+-D__BOOL_SIZE__=1
 -D__WCHAR_T_TYPE__=unsigned short int
 -D__WCHAR_T_SIZE__=2
 -D__WCHAR_T_MAX__=0xffff
 -D__DEF_PTR_MEM__=__data
+-D__DEF_PTR_SIZE__=4
+-D__CODE_MEMORY_LIST3__(_P1,_P2)=__CODE_MEM_HELPER3__(__code, 0, _P1, _P2)
+-D__DATA_MEMORY_LIST3__(_P1,_P2)=__DATA_MEM_HELPER3__(__data, 0, _P1, _P2)
 -D__DATA_MEM0__=__data
 -D__DATA_MEM0_POINTER_OK__=1
 -D__DATA_MEM0_UNIQUE_POINTER__=1
@@ -196,11 +189,16 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\CMSIS\In
 -D__CODE_MEM0_POINTER_OK__=1
 -D__CODE_MEM0_UNIQUE_POINTER__=1
 -D__CODE_MEM0_VAR_OK__=1
+-D__CODE_PTR_MEMORY_LIST3__(_P1,_P2)=__CODE_PTR_MEM_HELPER3__(__code, 0, _P1, _P2)
+-D__DATA_PTR_MEMORY_LIST3__(_P1,_P2)=__DATA_PTR_MEM_HELPER3__(__data, 0, _P1, _P2)
+-D__VAR_MEMORY_LIST3__(_P1,_P2)=__VAR_MEM_HELPER3__(__data, 0, _P1, _P2)
 -D__HEAP_MEM0__=0
+-D__HEAP_MEMORY_LIST3__(_P1,_P2)=__HEAP_MEM_HELPER3__(__data, 0, _P1, _P2)
 -D__MULTIPLE_HEAPS__=0
+-D__TOPM_DATA_MEMORY_LIST3__(_P1,_P2)=
+-D__TOPP_DATA_MEMORY_LIST3__(_P1,_P2)=__TOPP_DATA_MEM_HELPER3__(__data, 0, _P1, _P2)
 -D__DEF_HEAP_MEM__=__data
 -D__PRAGMA_PACK_ON__=1
--D__C99_BOOL__=1
 -D__MULTIPLE_INHERITANCE__=1
 -D__AAPCS__=1
 -D__ARM4TM__=4
@@ -224,18 +222,18 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\CMSIS\In
 -D__HAS_JOINED_TYPES__=1
 -D__HAS_LOCATED_DECLARATION__=1
 -D__HAS_LOCATED_WITH_INIT__=1
--D__IAR_COMPILERBASE__=593162
--D__DATE__="Feb 18 2015"
--D__TIME__="17:08:37"
+-D__IAR_COMPILERBASE__=594435
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1
+-D__STDC_NO_VLA__=1
+-D__STDC_NO_ATOMICS__=1
 -D__EDG_IA64_ABI=1
 -D__EDG_IA64_ABI_VARIANT_CTORS_AND_DTORS_RETURN_THIS=1
 -D__EDG_IA64_ABI_USE_INT_STATIC_INIT_GUARD=1
 -D__EDG_TYPE_TRAITS_ENABLED=1
 -D__EDG__=1
--D__EDG_VERSION__=403
+-D__EDG_VERSION__=409
 -D__EDG_SIZE_TYPE__=unsigned int
 -D__EDG_PTRDIFF_TYPE__=int
 -D__EDG_DELTA_TYPE=int
@@ -250,16 +248,11 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\CMSIS\In
 -D__EDG_BSD=0
 -D__EDG_SYSV=0
 -D__EDG_ANSIC=1
--D__EDG_CPP0X_IL_EXTENSIONS_SUPPORTED=1
--DSTM32L1XX_MD=1
--DCFG_eu868=1
--DCFG_DEBUG=1
--DCFG_wimod_board=1
--DCFG_sx1272_radio=1
--DCFG_EXTI_IRQ_HANDLER=sensorirq
--D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\INC\c\DLib_Config_Normal.h"
--D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 6.0 Kickstart\\arm\\INC\\c\\DLib_Config_Normal.h"
--D__VERSION__="IAR ANSI C/C++ Compiler V6.50.5.4819/W32 for ARM"
+-D__EDG_CPP11_IL_EXTENSIONS_SUPPORTED=1
+-D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\INC\c\DLib_Config_Normal.h"
+-D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 7.2\\arm\\INC\\c\\DLib_Config_Normal.h"
+-D__VERSION__="IAR ANSI C/C++ Compiler V7.40.2.8542/W32 for ARM"
+-D_VA_DEFINED=
 -D__CODE_MEMORY_LIST1__()=__CODE_MEM_HELPER1__(__code, 0 )
 -D__CODE_MEMORY_LIST2__(_P1)=__CODE_MEM_HELPER2__(__code, 0 ,  _P1 )
 -D__CODE_MEMORY_LIST3__(_P1, _P2)=__CODE_MEM_HELPER3__(__code, 0 ,  _P1 ,  _P2 )
