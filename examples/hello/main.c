@@ -9,8 +9,8 @@
  *    IBM Zurich Research Lab - initial API, implementation and documentation
  *******************************************************************************/
 
-#include "lmic.h"
-#include "debug.h"
+#include "../../lmic/lmic.h"
+#include "../../hal/debug.h"
 
 // LMIC application callbacks not used in his example
 void os_getArtEui (u1_t* buf) {
@@ -41,17 +41,30 @@ static void initfunc (osjob_t* job) {
 }
 
 // application entry point
-int main () {
-    osjob_t initjob;
+int main ()
+{
+	osjob_t initjob;
+	u4_t time;
 
-    // initialize runtime env
-    os_init();
-    // initialize debug library
-    debug_init();
-    // setup initial job
-    os_setCallback(&initjob, initfunc);
-    // execute scheduled jobs and events
-    os_runloop();
-    // (not reached)
-    return 0;
+	debug_init();	// initialize debug library
+
+    /*hal_init();
+    while(1)
+	{
+		debug_str("\r\nT=");
+		time = hal_ticks();
+		debug_hex(time>>24);
+		debug_hex(time>>16);
+		debug_hex(time>>8);
+		debug_hex(time>>0);
+	}*/
+
+	os_init();	// initialize runtime env
+
+	os_setCallback(&initjob, initfunc);	// setup initial job
+
+	os_runloop();	// execute scheduled jobs and events
+
+
+	return 0;	// (not reached)
 }

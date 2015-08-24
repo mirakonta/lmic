@@ -672,7 +672,7 @@ void radio_init () {
     }
     randbuf[0] = 16; // set initial index
   
-#ifdef CFG_sx1276mb1_board
+#ifdef CFG_sx1276_radio	//CFG_sx1276mb1_board
     // chain calibration
     writeReg(RegPaConfig, 0);
     
@@ -689,7 +689,7 @@ void radio_init () {
     // Launch Rx chain calibration for HF band 
     writeReg(FSKRegImageCal, (readReg(FSKRegImageCal) & RF_IMAGECAL_IMAGECAL_MASK)|RF_IMAGECAL_IMAGECAL_START);
     while((readReg(FSKRegImageCal) & RF_IMAGECAL_IMAGECAL_RUNNING) == RF_IMAGECAL_IMAGECAL_RUNNING) { ; }
-#endif /* CFG_sx1276mb1_board */
+#endif /* CFG_sx1276_radio	//CFG_sx1276mb1_board */
 
     opmode(OPMODE_SLEEP);
 

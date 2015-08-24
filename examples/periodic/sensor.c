@@ -9,16 +9,19 @@
  *    IBM Zurich Research Lab - initial API, implementation and documentation
  *******************************************************************************/
 
-#include "lmic.h"
-#include "hw.h"
+#include "../../lmic/lmic.h"
+
 
 // use PB12 (DIP switch 1) as sensor value
-void initsensor () {
-    RCC->AHBENR  |= RCC_AHBENR_GPIOBEN; // clock enable port B
-    hw_cfg_pin(GPIOB, 12, GPIOCFG_MODE_INP | GPIOCFG_OSPEED_40MHz | GPIOCFG_OTYPE_OPEN); // PB12
+void initsensor ()
+{
+//    RCC->AHBENR  |= RCC_AHBENR_GPIOBEN; // clock enable port B
+//    hw_cfg_pin(GPIOB, 12, GPIOCFG_MODE_INP | GPIOCFG_OSPEED_40MHz | GPIOCFG_OTYPE_OPEN); // PB12
 }
 
 // read PB12
-u2_t readsensor () {
-    return ((GPIOB->IDR & (1 << 12)) != 0);
+u2_t readsensor ()
+{
+	return 0;
+//	return ((GPIOB->IDR & (1 << 12)) != 0);
 }

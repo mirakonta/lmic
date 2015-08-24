@@ -9,8 +9,8 @@
  *    IBM Zurich Research Lab - initial API, implementation and documentation
  *******************************************************************************/
 
-#include "lmic.h"
-#include "debug.h"
+#include "../../lmic/lmic.h"
+#include "../../hal/debug.h"
 
 //////////////////////////////////////////////////
 // CONFIGURATION (FOR APPLICATION CALLBACKS BELOW)
@@ -23,7 +23,11 @@ static const u1_t APPEUI[8]  = { 0x02, 0x00, 0x00, 0x00, 0x00, 0xEE, 0xFF, 0xC0 
 static const u1_t DEVEUI[8]  = { 0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF };
 
 // device-specific AES key (derived from device EUI)
-static const u1_t DEVKEY[16] = { 0xAB, 0x89, 0xEF, 0xCD, 0x23, 0x01, 0x67, 0x45, 0x54, 0x76, 0x10, 0x32, 0xDC, 0xFE, 0x98, 0xBA };
+static const u1_t DEVKEY[16] = { 0xE7, 0x63, 0x2E, 0x1C, 0xF3, 0x61, 0x7E, 0xAD, 0xF5, 0xC0, 0xBC, 0x7E, 0x38, 0xEA, 0x09, 0xA8  };
+
+static const u1_t nwkKey[16] = { 0xE7, 0x63, 0x2E, 0x1C, 0xF3, 0x61, 0x7E, 0xAD, 0xF5, 0xC0, 0xBC, 0x7E, 0x38, 0xEA, 0x09, 0xA8  };
+
+static const u1_t artKey[16] = { 0xE7, 0x63, 0x2E, 0x1C, 0xF3, 0x61, 0x7E, 0xAD, 0xF5, 0xC0, 0xBC, 0x7E, 0x38, 0xEA, 0x09, 0xA8  };
 
 
 //////////////////////////////////////////////////
@@ -55,7 +59,14 @@ static void initfunc (osjob_t* j) {
     // reset MAC state
     LMIC_reset();
     // start joining
-    LMIC_startJoining();
+    LMIC_setSession(0x12345678, 0xB710566C, nwkKey, artKey);
+    // enable pinging mode, start scanning...
+    // (set local ping interval configuration to 2^1 == 2 sec)
+    LMIC_setPingable(1);
+    debug_str("SCANNING...\r\n");
+
+    LMIC_sendAlive();
+    //LMIC_startJoining();
     // init done - onEvent() callback will be invoked...
 }
 

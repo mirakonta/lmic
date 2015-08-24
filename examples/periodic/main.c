@@ -9,8 +9,8 @@
  *    IBM Zurich Research Lab - initial API, implementation and documentation
  *******************************************************************************/
 
-#include "lmic.h"
-#include "debug.h"
+#include "../../lmic/lmic.h"
+#include "../../hal/debug.h"
 
 // sensor functions
 extern void initsensor(void);
@@ -28,7 +28,11 @@ static const u1_t APPEUI[8]  = { 0x02, 0x00, 0x00, 0x00, 0x00, 0xEE, 0xFF, 0xC0 
 static const u1_t DEVEUI[8]  = { 0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF };
 
 // device-specific AES key (derived from device EUI)
-static const u1_t DEVKEY[16] = { 0xAB, 0x89, 0xEF, 0xCD, 0x23, 0x01, 0x67, 0x45, 0x54, 0x76, 0x10, 0x32, 0xDC, 0xFE, 0x98, 0xBA };
+static const u1_t DEVKEY[16] = { 0xE7, 0x63, 0x2E, 0x1C, 0xF3, 0x61, 0x7E, 0xAD, 0xF5, 0xC0, 0xBC, 0x7E, 0x38, 0xEA, 0x09, 0xA8  };
+
+static const u1_t nwkKey[16] = { 0xE7, 0x63, 0x2E, 0x1C, 0xF3, 0x61, 0x7E, 0xAD, 0xF5, 0xC0, 0xBC, 0x7E, 0x38, 0xEA, 0x09, 0xA8  };
+
+static const u1_t artKey[16] = { 0xE7, 0x63, 0x2E, 0x1C, 0xF3, 0x61, 0x7E, 0xAD, 0xF5, 0xC0, 0xBC, 0x7E, 0x38, 0xEA, 0x09, 0xA8  };
 
 
 //////////////////////////////////////////////////
@@ -50,7 +54,31 @@ void os_getDevKey (u1_t* buf) {
     memcpy(buf, DEVKEY, 16);
 }
 
+//////////////////////////////////////////////////
+// UTILITY JOB
+//////////////////////////////////////////////////
+static osjob_t reportjob;
 
+// report sensor value every minute
+static void reportfunc (osjob_t* j) {
+    // read sensor
+    u2_t val = readsensor();
+    debug_val("val = ", val);
+    // prepare and schedule data for transmission
+    LMIC.frame[0] = val << 8;
+    LMIC.frame[1] = val;
+    LMIC_setTxData2(1, LMIC.frame, 2, 1); // (port 1, 2 bytes, unconfirmed)
+    os_setTimedCallback(j, os_getTime()+sec2osticks(5), reportfunc);     // reschedule job in 5 seconds
+
+}
+
+static osjob_t alivejob;
+
+static void alivefunc(osjob_t* j)
+{
+	debug_str("\r\nalive\r\n");
+	os_setTimedCallback(j, os_getTime()+sec2osticks(1), alivefunc);     // reschedule job in 5 seconds
+}
 //////////////////////////////////////////////////
 // MAIN - INITIALIZATION AND STARTUP
 //////////////////////////////////////////////////
@@ -62,7 +90,12 @@ static void initfunc (osjob_t* j) {
     // reset MAC state
     LMIC_reset();
     // start joining
-    LMIC_startJoining();
+    LMIC_setSession(0x12345678, 0xB710566C, nwkKey, artKey);
+    // kick-off periodic sensor job
+    alivefunc(&alivejob);
+    reportfunc(&reportjob);
+
+    //LMIC_startJoining();
     // init done - onEvent() callback will be invoked...
 }
 
@@ -84,24 +117,6 @@ int main () {
 }
 
 
-//////////////////////////////////////////////////
-// UTILITY JOB
-//////////////////////////////////////////////////
-
-static osjob_t reportjob;
-
-// report sensor value every minute
-static void reportfunc (osjob_t* j) {
-    // read sensor
-    u2_t val = readsensor();
-    debug_val("val = ", val);
-    // prepare and schedule data for transmission
-    LMIC.frame[0] = val << 8;
-    LMIC.frame[1] = val;
-    LMIC_setTxData2(1, LMIC.frame, 2, 0); // (port 1, 2 bytes, unconfirmed)
-    // reschedule job in 60 seconds
-    os_setTimedCallback(j, os_getTime()+sec2osticks(60), reportfunc);
-}
 
 
 //////////////////////////////////////////////////
