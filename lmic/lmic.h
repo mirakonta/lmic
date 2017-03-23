@@ -204,13 +204,13 @@ struct lmic_t {
     u1_t        dn2Dr;
     u4_t        dn2Freq;
     u1_t        dn2Ans;       // 0=no answer pend, 0x80+ACKs
-
+#if defined CLASS_B
     // Class B state
     u1_t        missedBcns;   // unable to track last N beacons
     u1_t        bcninfoTries; // how often to try (scan mode only)
     u1_t        pingSetAns;   // answer set cmd and ACK bits
     rxsched_t   ping;         // pingable setup
-
+#endif
     // Public part of MAC state
     u1_t        txCnt;
     u1_t        txrxFlags;  // transaction flags (TX-RX combo)
@@ -243,6 +243,7 @@ bit_t LMIC_startJoining (void);
 void  LMIC_shutdown     (void);
 void  LMIC_init         (void);
 void  LMIC_reset        (void);
+void  LMIC_restart      (void); //restart after a LMIC_shutdown without reset
 void  LMIC_clrTxData    (void);
 void  LMIC_setTxData    (void);
 int   LMIC_setTxData2   (u1_t port, xref2u1_t data, u1_t dlen, u1_t confirmed);
