@@ -107,6 +107,7 @@ u1_t os_getBattLevel (void) {
 }
 #endif
 
+#if defined CLASS_B
 #if !defined(os_crc16)
 // New CRC-16 CCITT(XMODEM) checksum for beacons:
 u2_t os_crc16 (xref2u1_t data, uint len) {
@@ -123,6 +124,7 @@ u2_t os_crc16 (xref2u1_t data, uint len) {
     }
     return remainder;
 }
+#endif
 #endif
 
 #endif // !HAS_os_calls
@@ -399,13 +401,15 @@ static ostime_t calcRxWindow (u1_t secs, dr_t dr) {
         err = (LMIC.lastDriftDiff * (ostime_t)secs) >> BCN_INTV_exp;
     }
     u1_t rxsyms = MINRX_SYMS;
+	#if defined CLASS_B
     err += (ostime_t)LMIC.maxDriftDiff * LMIC.missedBcns;
+	#endif
     LMIC.rxsyms = MINRX_SYMS + (err / dr2hsym(dr));
 
     return (rxsyms-PAMBL_SYMS) * dr2hsym(dr) + rxoff;
 }
 
-
+#if defined CLASS_B
 // Setup beacon RX parameters assuming we have an error of ms (aka +/-(ms/2))
 static void calcBcnRxWindowFromMillis (u1_t ms, bit_t ini) {
     if( ini ) {
@@ -418,7 +422,6 @@ static void calcBcnRxWindowFromMillis (u1_t ms, bit_t ini) {
     LMIC.bcnRxsyms = MINRX_SYMS + ms2osticksCeil(ms) / hsym;
     LMIC.bcnRxtime = LMIC.bcninfo.txtime + BCN_INTV_osticks - (LMIC.bcnRxsyms-PAMBL_SYMS) * hsym;
 }
-
 
 // Setup scheduled RX window (ping/multicast slot)
 static void rxschedInit (xref2rxsched_t rxsched) {
@@ -454,6 +457,7 @@ static bit_t rxschedNext (xref2rxsched_t rxsched, ostime_t cando) {
     rxsched->rxsyms = LMIC.rxsyms;
     goto again;
 }
+#endif
 
 
 static ostime_t rndDelay (u1_t secSpan) {
@@ -476,42 +480,33 @@ static void txDelay (ostime_t reftime, u1_t secSpan) {
 }
 
 
-static void setDrJoin (u1_t reason, u1_t dr) {
-    EV(drChange, INFO, (e_.reason    = reason,
-                        e_.deveui    = MAIN::CDEV->getEui(),
-                        e_.dr        = dr|DR_PAGE,
-                        e_.txpow     = LMIC.adrTxPow,
-                        e_.prevdr    = LMIC.datarate|DR_PAGE,
-                        e_.prevtxpow = LMIC.adrTxPow));
+static void setDrJoin (u1_t reason, u1_t dr)
+{
     LMIC.datarate = dr;
-    DO_DEVDB(LMIC.datarate,datarate);
 }
 
 
-static void setDrTxpow (u1_t reason, u1_t dr, s1_t pow) {
-    EV(drChange, INFO, (e_.reason    = reason,
-                        e_.deveui    = MAIN::CDEV->getEui(),
-                        e_.dr        = dr|DR_PAGE,
-                        e_.txpow     = pow,
-                        e_.prevdr    = LMIC.datarate|DR_PAGE,
-                        e_.prevtxpow = LMIC.adrTxPow));
-    
+static void setDrTxpow (u1_t reason, u1_t dr, s1_t pow)
+{
     if( pow != KEEP_TXPOW )
         LMIC.adrTxPow = pow;
-    if( LMIC.datarate != dr ) {
+    if( LMIC.datarate != dr )
+    {
         LMIC.datarate = dr;
-        DO_DEVDB(LMIC.datarate,datarate);
         LMIC.opmode |= OP_NEXTCHNL;
     }
 }
 
 
-void LMIC_stopPingable (void) {
+#if defined CLASS_B
+void LMIC_stopPingable (void)
+{
     LMIC.opmode &= ~(OP_PINGABLE|OP_PINGINI);
 }
 
 
-void LMIC_setPingable (u1_t intvExp) {
+void LMIC_setPingable (u1_t intvExp)
+{
     // Change setting
     LMIC.ping.intvExp = (intvExp & 0x7);
     LMIC.opmode |= OP_PINGABLE;
@@ -520,7 +515,7 @@ void LMIC_setPingable (u1_t intvExp) {
     if( (LMIC.opmode & (OP_TRACK|OP_SCAN)) == 0  &&  LMIC.bcninfoTries == 0 )
         LMIC_enableTracking(0);
 }
-
+#endif
 
 #if defined(CFG_eu868)
 // ================================================================================
@@ -666,12 +661,13 @@ static ostime_t nextTx (ostime_t now) {
     } while(1);
 }
 
-
+#if defined CLASS_B
 static void setBcnRxParams (void) {
     LMIC.dataLen = 0;
     LMIC.freq = LMIC.channelFreq[LMIC.bcnChnl] & ~(u4_t)3;
     LMIC.rps  = setIh(setNocrc(dndr2rps((dr_t)DR_BCN),1),LEN_BCN);
 }
+#endif
 
 #define setRx1Params() /*LMIC.freq/rps remain unchanged*/
 
@@ -885,10 +881,8 @@ static void runEngineUpdate (xref2osjob_t osjob) {
 }
 
 
-static void reportEvent (ev_t ev) {
-    EV(devCond, INFO, (e_.reason = EV::devCond_t::LMIC_EV,
-                       e_.eui    = MAIN::CDEV->getEui(),
-                       e_.info   = ev));
+static void reportEvent (ev_t ev)
+{
     ON_LMIC_EVENT(ev);
     engineUpdate();
 }
@@ -906,21 +900,23 @@ static void stateJustJoined (void) {
     LMIC.rejoinCnt   = 0;
     LMIC.dnConf      = LMIC.adrChanged = LMIC.ladrAns = LMIC.devsAns = 0;
     LMIC.moreData    = LMIC.dn2Ans = LMIC.snchAns = LMIC.dutyCapAns = 0;
-    LMIC.pingSetAns  = 0;
     LMIC.upRepeat    = 0;
     LMIC.adrAckReq   = LINK_CHECK_INIT;
     LMIC.dn2Dr       = DR_DNW2;
     LMIC.dn2Freq     = FREQ_DNW2;
     LMIC.bcnChnl     = CHNL_BCN;
+#if defined CLASS_B
+    LMIC.pingSetAns  = 0;
     LMIC.ping.freq   = FREQ_PING;
     LMIC.ping.dr     = DR_PING;
+#endif
 }
 
 
 // ================================================================================
 // Decoding frames
 
-
+#if defined CLASS_B
 // Decode beacon  - do not overwrite bcninfo unless we have a match!
 static int decodeBeacon (void) {
     ASSERT(LMIC.dataLen == LEN_BCN); // implicit header RX guarantees this
@@ -956,7 +952,7 @@ static int decodeBeacon (void) {
     LMIC.bcninfo.flags |= BCN_FULL;
     return 2;
 }
-
+#endif
 
 static bit_t decodeFrame (void) {
     xref2u1_t d = LMIC.frame;
@@ -967,10 +963,6 @@ static bit_t decodeFrame (void) {
         (hdr & HDR_MAJOR) != HDR_MAJOR_V1 ||
         (ftype != HDR_FTYPE_DADN  &&  ftype != HDR_FTYPE_DCDN) ) {
         // Basic sanity checks failed
-        EV(specCond, WARN, (e_.reason = EV::specCond_t::UNEXPECTED_FRAME,
-                            e_.eui    = MAIN::CDEV->getEui(),
-                            e_.info   = dlen < 4 ? 0 : os_rlsbf4(&d[dlen-4]),
-                            e_.info2  = hdr + (dlen<<8)));
       norx:
         LMIC.dataLen = 0;
         return 0;
@@ -986,16 +978,9 @@ static bit_t decodeFrame (void) {
     int  pend  = dlen-4;  // MIC
 
     if( addr != LMIC.devaddr ) {
-        EV(specCond, WARN, (e_.reason = EV::specCond_t::ALIEN_ADDRESS,
-                            e_.eui    = MAIN::CDEV->getEui(),
-                            e_.info   = addr,
-                            e_.info2  = LMIC.devaddr));
         goto norx;
     }
     if( poff > pend ) {
-        EV(specCond, ERR, (e_.reason = EV::specCond_t::CORRUPTED_FRAME,
-                           e_.eui    = MAIN::CDEV->getEui(),
-                           e_.info   = 0x1000000 + (poff-pend) + (fct<<8) + (dlen<<16)));
         goto norx;
     }
 
@@ -1008,26 +993,13 @@ static bit_t decodeFrame (void) {
     seqno = LMIC.seqnoDn + (u2_t)(seqno - LMIC.seqnoDn);
 
     if( !aes_verifyMic(LMIC.nwkKey, LMIC.devaddr, seqno, /*dn*/1, d, pend) ) {
-        EV(spe3Cond, ERR, (e_.reason = EV::spe3Cond_t::CORRUPTED_MIC,
-                           e_.eui1   = MAIN::CDEV->getEui(),
-                           e_.info1  = Base::lsbf4(&d[pend]),
-                           e_.info2  = seqno,
-                           e_.info3  = LMIC.devaddr));
         goto norx;
     }
     if( seqno < LMIC.seqnoDn ) {
         if( (s4_t)seqno > (s4_t)LMIC.seqnoDn ) {
-            EV(specCond, INFO, (e_.reason = EV::specCond_t::DNSEQNO_ROLL_OVER,
-                                e_.eui    = MAIN::CDEV->getEui(),
-                                e_.info   = LMIC.seqnoDn, 
-                                e_.info2  = seqno));
             goto norx;
         }
         if( seqno != LMIC.seqnoDn-1 || !LMIC.dnConf || ftype != HDR_FTYPE_DCDN ) {
-            EV(specCond, INFO, (e_.reason = EV::specCond_t::DNSEQNO_OBSOLETE,
-                                e_.eui    = MAIN::CDEV->getEui(),
-                                e_.info   = LMIC.seqnoDn, 
-                                e_.info2  = seqno));
             goto norx;
         }
         // Replay of previous sequence number allowed only if
@@ -1036,13 +1008,8 @@ static bit_t decodeFrame (void) {
     }
     else {
         if( seqno > LMIC.seqnoDn ) {
-            EV(specCond, INFO, (e_.reason = EV::specCond_t::DNSEQNO_SKIP,
-                                e_.eui    = MAIN::CDEV->getEui(),
-                                e_.info   = LMIC.seqnoDn, 
-                                e_.info2  = seqno));
         }
         LMIC.seqnoDn = seqno+1;  // next number to be expected
-        DO_DEVDB(LMIC.seqnoDn,seqnoDn);
         // DN frame requested confirmation - provide ACK once with next UP frame
         LMIC.dnConf = (ftype == HDR_FTYPE_DCDN ? FCT_ACK : 0);
     }
@@ -1083,10 +1050,6 @@ static bit_t decodeFrame (void) {
             dr_t dr = (dr_t)(p1>>MCMD_LADR_DR_SHIFT);
             if( !validDR(dr) ) {
                 LMIC.ladrAns &= ~MCMD_LADR_ANS_DRACK;
-                EV(specCond, ERR, (e_.reason = EV::specCond_t::BAD_MAC_CMD,
-                                   e_.eui    = MAIN::CDEV->getEui(),
-                                   e_.info   = Base::lsbf4(&d[pend]),
-                                   e_.info2  = Base::msbf4(&opts[oidx-4])));
             }
             if( (LMIC.ladrAns & 0x7F) == (MCMD_LADR_ANS_POWACK | MCMD_LADR_ANS_CHACK | MCMD_LADR_ANS_DRACK) ) {
                 // Nothing went wrong - use settings
@@ -1113,8 +1076,6 @@ static bit_t decodeFrame (void) {
             if( LMIC.dn2Ans == (0x80|MCMD_DN2P_ANS_DRACK|MCMD_DN2P_ANS_CHACK) ) {
                 LMIC.dn2Dr = dr;
                 LMIC.dn2Freq = freq;
-                DO_DEVDB(LMIC.dn2Dr,dn2Dr);
-                DO_DEVDB(LMIC.dn2Freq,dn2Freq);
             }
             continue;
         }
@@ -1126,7 +1087,6 @@ static bit_t decodeFrame (void) {
                 LMIC.opmode |= OP_SHUTDOWN;  // stop any sending
             LMIC.globalDutyRate  = cap & 0xF;
             LMIC.globalDutyAvail = os_getTime();
-            DO_DEVDB(cap,dutyCap);
             LMIC.dutyCapAns = 1;
             continue;
         }
@@ -1140,6 +1100,7 @@ static bit_t decodeFrame (void) {
             oidx += 6;
             continue;
         }
+		#if defined CLASS_B
         case MCMD_PING_SET: {
             u4_t freq = convFreq(&opts[oidx+1]);
             oidx += 4;
@@ -1147,9 +1108,6 @@ static bit_t decodeFrame (void) {
             if( freq != 0 ) {
                 flags |= MCMD_PING_ANS_FQACK;
                 LMIC.ping.freq = freq;
-                DO_DEVDB(LMIC.ping.intvExp, pingIntvExp);
-                DO_DEVDB(LMIC.ping.freq, pingFreq);
-                DO_DEVDB(LMIC.ping.dr, pingDr);
             }
             LMIC.pingSetAns = flags;
             continue;
@@ -1169,29 +1127,15 @@ static bit_t decodeFrame (void) {
                                        - BCN_INTV_osticks);
                 LMIC.bcninfo.flags = 0;  // txtime above cannot be used as reference (BCN_PARTIAL|BCN_FULL cleared)
                 calcBcnRxWindowFromMillis(MCMD_BCNI_TUNIT,1);  // error of +/-N ms 
-
-                EV(lostFrame, INFO, (e_.reason  = EV::lostFrame_t::MCMD_BCNI_ANS,
-                                     e_.eui     = MAIN::CDEV->getEui(),
-                                     e_.lostmic = Base::lsbf4(&d[pend]),
-                                     e_.info    = (LMIC.missedBcns |
-                                                   (osticks2us(LMIC.bcninfo.txtime + BCN_INTV_osticks
-                                                               - LMIC.bcnRxtime) << 8)),
-                                     e_.time    = MAIN::CDEV->ostime2ustime(LMIC.bcninfo.txtime + BCN_INTV_osticks)));
             }
             oidx += 4;
             continue;
         }
+		#endif
         }
-        EV(specCond, ERR, (e_.reason = EV::specCond_t::BAD_MAC_CMD,
-                           e_.eui    = MAIN::CDEV->getEui(),
-                           e_.info   = Base::lsbf4(&d[pend]),
-                           e_.info2  = Base::msbf4(&opts[oidx])));
         break;
     }
     if( oidx != olen ) {
-        EV(specCond, ERR, (e_.reason = EV::specCond_t::CORRUPTED_FRAME,
-                           e_.eui    = MAIN::CDEV->getEui(),
-                           e_.info   = 0x1000000 + (oidx) + (olen<<8)));
     }
 
     if( !replayConf ) {
@@ -1199,23 +1143,7 @@ static bit_t decodeFrame (void) {
         // Decrypt payload - if any
         if( port >= 0  &&  pend-poff > 0 )
             aes_cipher(port <= 0 ? LMIC.nwkKey : LMIC.artKey, LMIC.devaddr, seqno, /*dn*/1, d+poff, pend-poff);
-
-        EV(dfinfo, DEBUG, (e_.deveui  = MAIN::CDEV->getEui(),
-                           e_.devaddr = LMIC.devaddr,
-                           e_.seqno   = seqno,
-                           e_.flags   = (port < 0 ? EV::dfinfo_t::NOPORT : 0) | EV::dfinfo_t::DN,
-                           e_.mic     = Base::lsbf4(&d[pend]),
-                           e_.hdr     = d[LORA::OFF_DAT_HDR],
-                           e_.fct     = d[LORA::OFF_DAT_FCT],
-                           e_.port    = port,
-                           e_.plen    = dlen,
-                           e_.opts.length = olen,
-                           memcpy(&e_.opts[0], opts, olen)));
     } else {
-        EV(specCond, INFO, (e_.reason = EV::specCond_t::DNSEQNO_REPLAY,
-                            e_.eui    = MAIN::CDEV->getEui(),
-                            e_.info   = Base::lsbf4(&d[pend]),
-                            e_.info2  = seqno));
     }
 
     if( // NWK acks but we don't have a frame pending
@@ -1224,10 +1152,6 @@ static bit_t decodeFrame (void) {
         // BUT it did not carry an ACK - this should never happen
         // Do not resend and assume frame was not ACKed.
         (!ackup && LMIC.txCnt != 0) ) {
-        EV(specCond, ERR, (e_.reason = EV::specCond_t::SPURIOUS_ACK,
-                           e_.eui    = MAIN::CDEV->getEui(),
-                           e_.info   = seqno,
-                           e_.info2  = ackup));
     }
 
     if( LMIC.txCnt != 0 ) // we requested an ACK
@@ -1277,10 +1201,12 @@ static void setupRx1 (osjobcb_t func) {
 
 // Called by HAL once TX complete and delivers exact end of TX time stamp in LMIC.rxtime
 static void txDone (ostime_t delay, osjobcb_t func) {
+	#if defined CLASS_B
     if( (LMIC.opmode & (OP_TRACK|OP_PINGABLE|OP_PINGINI)) == (OP_TRACK|OP_PINGABLE) ) {
         rxschedInit(&LMIC.ping);    // note: reuses LMIC.frame buffer!
         LMIC.opmode |= OP_PINGINI;
     }
+	#endif
     // Change RX frequency / rps (US only) before we increment txChnl
     setRx1Params();
     // LMIC.rxsyms carries the TX datarate (can be != LMIC.datarate [confirm retries etc.])
@@ -1328,10 +1254,6 @@ static bit_t processJoinAccept (void) {
         }
         LMIC.opmode &= ~OP_TXRXPEND;
         ostime_t delay = nextJoinState();
-        EV(devCond, DEBUG, (e_.reason = EV::devCond_t::NO_JACC,
-                            e_.eui    = MAIN::CDEV->getEui(),
-                            e_.info   = LMIC.datarate|DR_PAGE,
-                            e_.info2  = osticks2ms(delay)));
         // Build next JOIN REQUEST with next engineUpdate call
         // Optionally, report join failed.
         // Both after a random/chosen amount of ticks.
@@ -1346,10 +1268,6 @@ static bit_t processJoinAccept (void) {
     u4_t mic  = os_rlsbf4(&LMIC.frame[dlen-4]); // safe before modified by encrypt!
     if( (dlen != LEN_JA && dlen != LEN_JAEXT)
         || (hdr & (HDR_FTYPE|HDR_MAJOR)) != (HDR_FTYPE_JACC|HDR_MAJOR_V1) ) {
-        EV(specCond, ERR, (e_.reason = EV::specCond_t::UNEXPECTED_FRAME,
-                           e_.eui    = MAIN::CDEV->getEui(),
-                           e_.info   = dlen < 4 ? 0 : mic,
-                           e_.info2  = hdr + (dlen<<8)));
       badframe:
         if( (LMIC.txrxFlags & TXRX_DNW1) != 0 )
             return 0;
@@ -1357,8 +1275,6 @@ static bit_t processJoinAccept (void) {
     }
     aes_encrypt(LMIC.frame+1, dlen-1);
     if( !aes_verifyMic0(LMIC.frame, dlen-4) ) {
-        EV(specCond, ERR, (e_.reason = EV::specCond_t::JOIN_BAD_MIC,
-                           e_.info   = mic));
         goto badframe;
     }
 
@@ -1383,20 +1299,6 @@ static bit_t processJoinAccept (void) {
 
     // already incremented when JOIN REQ got sent off
     aes_sessKeys(LMIC.devNonce-1, &LMIC.frame[OFF_JA_ARTNONCE], LMIC.nwkKey, LMIC.artKey);
-    DO_DEVDB(LMIC.netid,   netid);
-    DO_DEVDB(LMIC.devaddr, devaddr);
-    DO_DEVDB(LMIC.nwkKey,  nwkkey);
-    DO_DEVDB(LMIC.artKey,  artkey);
-
-    EV(joininfo, INFO, (e_.arteui  = MAIN::CDEV->getArtEui(),
-                        e_.deveui  = MAIN::CDEV->getEui(),
-                        e_.devaddr = LMIC.devaddr,
-                        e_.oldaddr = oldaddr,
-                        e_.nonce   = LMIC.devNonce-1,
-                        e_.mic     = mic,
-                        e_.reason  = ((LMIC.opmode & OP_REJOIN) != 0
-                                      ? EV::joininfo_t::REJOIN_ACCEPT
-                                      : EV::joininfo_t::ACCEPT)));
     
     ASSERT((LMIC.opmode & (OP_JOINING|OP_REJOIN))!=0);
     if( (LMIC.opmode & OP_REJOIN) != 0 ) {
@@ -1492,12 +1394,14 @@ static void buildDataFrame (void) {
     // Piggyback MAC options
     // Prioritize by importance
     int  end = OFF_DAT_OPTS;
+	#if defined CLASS_B
     if( (LMIC.opmode & (OP_TRACK|OP_PINGABLE)) == (OP_TRACK|OP_PINGABLE) ) {
         // Indicate pingability in every UP frame
         LMIC.frame[end] = MCMD_PING_IND;
         LMIC.frame[end+1] = LMIC.ping.dr | (LMIC.ping.intvExp<<4);
         end += 2;
     }
+	#endif
     if( LMIC.dutyCapAns ) {
         LMIC.frame[end] = MCMD_DCAP_ANS;
         end += 1;
@@ -1522,21 +1426,25 @@ static void buildDataFrame (void) {
         end += 2;
         LMIC.ladrAns = 0;
     }
+	#if defined CLASS_B
     if( LMIC.bcninfoTries > 0 ) {
         LMIC.frame[end] = MCMD_BCNI_REQ;
         end += 1;
     }
+	#endif
     if( LMIC.adrChanged ) {
         if( LMIC.adrAckReq < 0 )
             LMIC.adrAckReq = 0;
         LMIC.adrChanged = 0;
     }
+	#if defined CLASS_B
     if( LMIC.pingSetAns != 0 ) {
         LMIC.frame[end+0] = MCMD_PING_ANS;
         LMIC.frame[end+1] = LMIC.pingSetAns & ~MCMD_PING_ANS_RFU;
         end += 2;
         LMIC.pingSetAns = 0;
     }
+	#endif
     if( LMIC.snchAns ) {
         LMIC.frame[end+0] = MCMD_SNCH_ANS;
         LMIC.frame[end+1] = LMIC.snchAns & ~MCMD_SNCH_ANS_RFU;
@@ -1559,14 +1467,7 @@ static void buildDataFrame (void) {
 
     if( LMIC.txCnt == 0 ) {
         LMIC.seqnoUp += 1;
-        DO_DEVDB(LMIC.seqnoUp,seqnoUp);
     } else {
-        EV(devCond, INFO, (e_.reason = EV::devCond_t::RE_TX,
-                           e_.eui    = MAIN::CDEV->getEui(),
-                           e_.info   = LMIC.seqnoUp-1,
-                           e_.info2  = ((LMIC.txCnt+1) |
-                                        (DRADJUST[LMIC.txCnt+1] << 8) |
-                                        ((LMIC.datarate|DR_PAGE)<<16))));
     }
     os_wlsbf2(LMIC.frame+OFF_DAT_SEQNO, LMIC.seqnoUp-1);
 
@@ -1587,21 +1488,10 @@ static void buildDataFrame (void) {
     }
     aes_appendMic(LMIC.nwkKey, LMIC.devaddr, LMIC.seqnoUp-1, /*up*/0, LMIC.frame, flen-4);
 
-    EV(dfinfo, DEBUG, (e_.deveui  = MAIN::CDEV->getEui(),
-                       e_.devaddr = LMIC.devaddr,
-                       e_.seqno   = LMIC.seqnoUp-1,
-                       e_.flags   = (LMIC.pendTxPort < 0 ? EV::dfinfo_t::NOPORT : EV::dfinfo_t::NOP),
-                       e_.mic     = Base::lsbf4(&LMIC.frame[flen-4]),
-                       e_.hdr     = LMIC.frame[LORA::OFF_DAT_HDR],
-                       e_.fct     = LMIC.frame[LORA::OFF_DAT_FCT],
-                       e_.port    = LMIC.pendTxPort,
-                       e_.plen    = txdata ? dlen : 0,
-                       e_.opts.length = end-LORA::OFF_DAT_OPTS,
-                       memcpy(&e_.opts[0], LMIC.frame+LORA::OFF_DAT_OPTS, end-LORA::OFF_DAT_OPTS)));
     LMIC.dataLen = flen;
 }
 
-
+#if defined CLASS_B
 // Callback from HAL during scan mode or when job timer expires.
 static void onBcnRx (xref2osjob_t job) {
     // If we arrive via job timer make sure to put radio to rest.
@@ -1665,7 +1555,7 @@ void LMIC_disableTracking (void) {
     LMIC.bcninfoTries = 0;
     engineUpdate();
 }
-
+#endif
 
 // ================================================================================
 //
@@ -1683,17 +1573,8 @@ static void buildJoinRequest (u1_t ftype) {
     os_wlsbf2(d + OFF_JR_DEVNONCE, LMIC.devNonce);
     aes_appendMic0(d, OFF_JR_MIC);
 
-    EV(joininfo,INFO,(e_.deveui  = MAIN::CDEV->getEui(),
-                      e_.arteui  = MAIN::CDEV->getArtEui(),
-                      e_.nonce   = LMIC.devNonce,
-                      e_.oldaddr = LMIC.devaddr,
-                      e_.mic     = Base::lsbf4(&d[LORA::OFF_JR_MIC]),
-                      e_.reason  = ((LMIC.opmode & OP_REJOIN) != 0
-                                    ? EV::joininfo_t::REJOIN_REQUEST
-                                    : EV::joininfo_t::REQUEST)));
     LMIC.dataLen = LEN_JR;
     LMIC.devNonce++;
-    DO_DEVDB(LMIC.devNonce,devNonce);
 }
 
 static void startJoining (xref2osjob_t osjob) {
@@ -1726,7 +1607,7 @@ bit_t LMIC_startJoining (void) {
 //
 //
 // ================================================================================
-
+#if defined CLASS_B
 static void processPingRx (xref2osjob_t osjob) {
     if( LMIC.dataLen != 0 ) {
         LMIC.txrxFlags = TXRX_PING;
@@ -1738,7 +1619,7 @@ static void processPingRx (xref2osjob_t osjob) {
     // Pick next ping slot
     engineUpdate();
 }
-
+#endif
 
 static bit_t processDnData (void) {
     ASSERT((LMIC.opmode & OP_TXRXPEND)!=0);
@@ -1775,14 +1656,12 @@ static bit_t processDnData (void) {
         if( LMIC.adrAckReq > LINK_CHECK_DEAD ) {
             // We haven't heard from NWK for some time although we
             // asked for a response for some time - assume we're disconnected. Lower DR one notch.
-            EV(devCond, ERR, (e_.reason = EV::devCond_t::LINK_DEAD,
-                              e_.eui    = MAIN::CDEV->getEui(),
-                              e_.info   = LMIC.adrAckReq));
             setDrTxpow(DRCHG_NOADRACK, decDR((dr_t)LMIC.datarate), KEEP_TXPOW);
             LMIC.adrAckReq = LINK_CHECK_CONT;
             LMIC.opmode |= OP_REJOIN|OP_LINKDEAD;
             reportEvent(EV_LINK_DEAD);
         }
+		#if defined CLASS_B
         // If this falls to zero the NWK did not answer our MCMD_BCNI_REQ commands - try full scan
         if( LMIC.bcninfoTries > 0 ) {
             if( (LMIC.opmode & OP_TRACK) != 0 ) {
@@ -1793,6 +1672,7 @@ static bit_t processDnData (void) {
                 startScan();   // NWK did not answer - try scan
             }
         }
+		#endif
         return 1;
     }
     if( !decodeFrame() ) {
@@ -1803,7 +1683,7 @@ static bit_t processDnData (void) {
     goto txcomplete;
 }
 
-
+#if defined CLASS_B
 static void processBeacon (xref2osjob_t osjob) {
     ostime_t lasttx = LMIC.bcninfo.txtime;   // save here - decodeBeacon might overwrite
     u1_t flags = LMIC.bcninfo.flags;
@@ -1833,10 +1713,6 @@ static void processBeacon (xref2osjob_t osjob) {
         LMIC.drift = drift;
         LMIC.missedBcns = LMIC.rejoinCnt = 0;
         LMIC.bcninfo.flags &= ~BCN_NODRIFT;
-        EV(devCond,INFO,(e_.reason = EV::devCond_t::CLOCK_DRIFT,
-                         e_.eui    = MAIN::CDEV->getEui(),
-                         e_.info   = drift,
-                         e_.info2  = /*occasion BEACON*/0));
         ASSERT((LMIC.bcninfo.flags & (BCN_PARTIAL|BCN_FULL)) != 0);
     } else {
         ev = EV_BEACON_MISSED;
@@ -1875,7 +1751,7 @@ static void startRxPing (xref2osjob_t osjob) {
     LMIC.osjob.func = FUNC_ADDR(processPingRx);
     os_radio(RADIO_RX);
 }
-
+#endif
 
 // Decide what to do next for the MAC layer of a device
 static void engineUpdate (void) {
@@ -1892,11 +1768,13 @@ static void engineUpdate (void) {
     ostime_t rxtime = 0;
     ostime_t txbeg  = 0;
 
+	#if defined CLASS_B
     if( (LMIC.opmode & OP_TRACK) != 0 ) {
         // We are tracking a beacon
         ASSERT( now + RX_RAMPUP - LMIC.bcnRxtime <= 0 );
         rxtime = LMIC.bcnRxtime - RX_RAMPUP;
     }
+	#endif
 
     if( (LMIC.opmode & (OP_JOINING|OP_REJOIN|OP_TXDATA|OP_POLL)) != 0 ) {
         // Need to TX some data...
@@ -1912,6 +1790,7 @@ static void engineUpdate (void) {
         // Delayed TX or waiting for duty cycle?
         if( (LMIC.globalDutyRate != 0 || (LMIC.opmode & OP_RNDTX) != 0)  &&  (txbeg - LMIC.globalDutyAvail) < 0 )
             txbeg = LMIC.globalDutyAvail;
+		#if defined CLASS_B
         // If we're tracking a beacon...
         // then make sure TX-RX transaction is complete before beacon
         if( (LMIC.opmode & OP_TRACK) != 0 &&
@@ -1922,6 +1801,7 @@ static void engineUpdate (void) {
             txbeg = 0;
             goto checkrx;
         }
+		#endif
         // Earliest possible time vs overhead to setup radio
         if( txbeg - (now + TX_RAMPUP) < 0 ) {
             // We could send right now!
@@ -1940,10 +1820,6 @@ static void engineUpdate (void) {
             } else {
                 if( LMIC.seqnoDn >= 0xFFFFFF80 ) {
                     // Imminent roll over - proactively reset MAC
-                    EV(specCond, INFO, (e_.reason = EV::specCond_t::DNSEQNO_ROLL_OVER,
-                                        e_.eui    = MAIN::CDEV->getEui(),
-                                        e_.info   = LMIC.seqnoDn, 
-                                        e_.info2  = 0));
                     // Device has to react! NWK will not roll over and just stop sending.
                     // Thus, we have N frames to detect a possible lock up.
                   reset:
@@ -1952,9 +1828,6 @@ static void engineUpdate (void) {
                 }
                 if( (LMIC.txCnt==0 && LMIC.seqnoUp == 0xFFFFFFFF) ) {
                     // Roll over of up seq counter
-                    EV(specCond, ERR, (e_.reason = EV::specCond_t::UPSEQNO_ROLL_OVER,
-                                       e_.eui    = MAIN::CDEV->getEui(),
-                                       e_.info2  = LMIC.seqnoUp));
                     // Do not run RESET event callback from here!
                     // App code might do some stuff after send unaware of RESET.
                     goto reset;
@@ -1981,6 +1854,7 @@ static void engineUpdate (void) {
             return;
     }
 
+	#if defined CLASS_B
     // Are we pingable?
   checkrx:
     if( (LMIC.opmode & OP_PINGINI) != 0 ) {
@@ -2013,12 +1887,9 @@ static void engineUpdate (void) {
     }
     os_setTimedCallback(&LMIC.osjob, rxtime, FUNC_ADDR(startRxBcn));
     return;
+	#endif
 
   txdelay:
-    EV(devCond, INFO, (e_.reason = EV::devCond_t::TX_DELAY,
-                       e_.eui    = MAIN::CDEV->getEui(),
-                       e_.info   = osticks2ms(txbeg-now),
-                       e_.info2  = LMIC.seqnoUp-1));
     os_setTimedCallback(&LMIC.osjob, txbeg-TX_RAMPUP, FUNC_ADDR(runEngineUpdate));
 }
 
@@ -2041,11 +1912,14 @@ void LMIC_shutdown (void) {
 }
 
 
-void LMIC_reset (void) {
-    EV(devCond, INFO, (e_.reason = EV::devCond_t::LMIC_EV,
-                       e_.eui    = MAIN::CDEV->getEui(),
-                       e_.info   = EV_RESET));
+void LMIC_restart (void) //restart after a LMIC_shutdown without reset
+{
     os_radio(RADIO_RST);
+    LMIC.opmode &= ~OP_SHUTDOWN;
+}
+
+
+void LMIC_reset (void) {
     os_clearCallback(&LMIC.osjob);
 
     os_clearMem((xref2u1_t)&LMIC,SIZEOFEXPR(LMIC));
@@ -2056,19 +1930,14 @@ void LMIC_reset (void) {
     LMIC.adrEnabled   =  FCT_ADREN;
     LMIC.dn2Dr        =  DR_DNW2;   // we need this for 2nd DN window of join accept
     LMIC.dn2Freq      =  FREQ_DNW2; // ditto
+#if defined CLASS_B
     LMIC.ping.freq    =  FREQ_PING; // defaults for ping
     LMIC.ping.dr      =  DR_PING;   // ditto
     LMIC.ping.intvExp =  0xFF;
+#endif
 #if defined(CFG_us915)
     initDefaultChannels();
 #endif
-    DO_DEVDB(LMIC.devaddr,      devaddr);
-    DO_DEVDB(LMIC.devNonce,     devNonce);
-    DO_DEVDB(LMIC.dn2Dr,        dn2Dr);
-    DO_DEVDB(LMIC.dn2Freq,      dn2Freq);
-    DO_DEVDB(LMIC.ping.freq,    pingFreq);
-    DO_DEVDB(LMIC.ping.dr,      pingDr);
-    DO_DEVDB(LMIC.ping.intvExp, pingIntvExp);
 }
 
 
@@ -2152,12 +2021,6 @@ void LMIC_setSession (u4_t netid, devaddr_t devaddr, xref2u1_t nwkKey, xref2u1_t
     LMIC.opmode &= ~(OP_JOINING|OP_TRACK|OP_REJOIN|OP_TXRXPEND|OP_PINGINI);
     LMIC.opmode |= OP_NEXTCHNL;
     stateJustJoined();
-    DO_DEVDB(LMIC.netid,   netid);
-    DO_DEVDB(LMIC.devaddr, devaddr);
-    DO_DEVDB(LMIC.nwkKey,  nwkkey);
-    DO_DEVDB(LMIC.artKey,  artkey);
-    DO_DEVDB(LMIC.seqnoUp, seqnoUp);
-    DO_DEVDB(LMIC.seqnoDn, seqnoDn);
 }
 
 // Enable/disable link check validation.
